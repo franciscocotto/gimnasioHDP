@@ -44,7 +44,7 @@
                     <div class="form-group">
                         <label class="col-md-3 control-label" style="margin-right: 15px !important;"><strong class="colorred">*</strong>Fecha de Nacimiento</label>
 
-                        <div class='col-md-3 input-group input-append noshow datetimePicker'>
+                        <div class='col-md-3 input-group input-append  datetimePicker'>
                             <input type='text' class="form-control date" placeholder="DD/MMM/YYYY" readonly="readonly" name="fechanacimiento" required="required" />
                             <span class="input-group-addon add-on">
                                 <span class="glyphicon glyphicon-calendar"></span>
