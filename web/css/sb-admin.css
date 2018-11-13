@@ -413,9 +413,11 @@ font-weight:bold;
 margin: auto;
 width: 150px;
 }
-
+.dataTables_scrollHeadInner{
+    width: 100% !Important;
+}
 .center2{
-    width: 90%;
+    width: 100%;
     display: block;
 margin: auto;
 }
