@@ -3985,7 +3985,7 @@
     // Side effect imports
 
     // FORMATTING
-    // Diseño: Angel Cotto
+
     addFormatToken('X', 0, 0, 'unix');
     addFormatToken('x', 0, 0, 'valueOf');
 

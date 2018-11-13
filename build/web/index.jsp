@@ -25,8 +25,9 @@
     </head> 
     <body>
        <jsp:include page="WEB-INF/Clientes.jsp" />
+        
         <script src="js/scripts.js"></script>
         
-
+  
     </body>
 </html>
