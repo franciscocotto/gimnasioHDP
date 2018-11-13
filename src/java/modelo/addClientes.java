@@ -6,8 +6,12 @@
 package modelo;
 
 import conexion.ConexionJDBC;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -27,8 +31,14 @@ public class addClientes {
             ConexionJDBC con = new ConexionJDBC();    
             con.conectar();
             String sql = "INSERT INTO Cliente(id_cliente, nombre, apellidos, dui, nit,fechanacimiento, membresia)"
-                        + "VALUES(?,?,?,?,?,?,?)";
-            usuario.add(cliente);
+                        + "VALUES(1,hola,adios,milagro,prueba,esta,g)";
+            try(PreparedStatement pst = con.getConexion().prepareStatement(sql)){
+                  usuario.add(cliente);
+            } catch (SQLException ex) {
+            Logger.getLogger(addClientes.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
+            
        }
 
           

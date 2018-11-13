@@ -55,9 +55,9 @@
                         <label class="col-md-3 control-label">Tipo Membresia</label>
                         <div class="col-md-5">
                             <select class="form-control" required name="membresia">
-                                <option></option>
-                                <option>Administrativo</option>
-                                <option>Operativo</option>
+                                <option>Bronce</option>
+                                <option>Plata</option>
+                                <option>Oro</option>
                             </select>
                         </div>
                     </div>

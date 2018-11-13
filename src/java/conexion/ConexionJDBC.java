@@ -13,7 +13,7 @@ public class ConexionJDBC {
     String db= "Gimnasio";
     String host = "localhost";
     String port = "5432";
-    String user  = "admin";
+    String user  = "postgres";
     String pass = "admin";
     
     
@@ -26,7 +26,7 @@ public class ConexionJDBC {
             Class.forName(driverDb);
              conexion = DriverManager.getConnection(url, user, pass);
              if(!conexion.isClosed()){
-                 System.out.println("Error @" + db);               
+                 System.out.println("Error");               
              }
              return conexion;
         } catch (ClassNotFoundException | SQLException ex){
