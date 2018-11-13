@@ -26,6 +26,7 @@ public class formClientes extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+  
             String nombre = request.getParameter("nombre");
             String apellido = request.getParameter("apellidos");
             String dui = request.getParameter("dui");

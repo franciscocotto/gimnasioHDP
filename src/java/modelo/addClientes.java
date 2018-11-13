@@ -5,6 +5,7 @@
  */
 package modelo;
 
+import conexion.ConexionJDBC;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,7 +24,11 @@ public class addClientes {
     }  
         
        public void agrega(Cliente cliente){
-           usuario.add(cliente);
+            ConexionJDBC con = new ConexionJDBC();    
+            con.conectar();
+            String sql = "INSERT INTO Cliente(id_cliente, nombre, apellidos, dui, nit,fechanacimiento, membresia)"
+                        + "VALUES(?,?,?,?,?,?,?)";
+            usuario.add(cliente);
        }
 
           
