@@ -44,7 +44,7 @@ SET default_with_oids = false;
 --
 
 CREATE TABLE public."Cliente" (
-    id_cliente integer NOT NULL,
+    id_campo SERIAL PRIMARY KEY,
     nombre character varying(20),
     apellidos character varying(20),
     dui character varying(10),
