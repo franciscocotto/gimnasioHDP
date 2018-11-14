@@ -464,7 +464,7 @@ var dui = function () {
 };
 
 var nit = function () {
-   $('.nit').mask('0000-0000000-000-0');
+   $('.nit').mask('0000-000000-000-0');
 };
 var getKeyCodes = function (e) {
     var Cod = "";

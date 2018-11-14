@@ -38,7 +38,7 @@
                     <div class="form-group numero">
                         <label class="col-md-3 control-label"><strong class="colorred">*</strong>NIT:</label>
                         <div class="col-md-8">
-                            <input class="form-control nit" type="text" name="nit" placeholder="Ingresar el NIT del Cliente" required="required" maxlength="18" minlength="18"/>    
+                            <input class="form-control nit" type="text" name="nit" placeholder="Ingresar el NIT del Cliente" required="required" maxlength="17" minlength="17"/>    
                         </div>
                     </div>
                     <div class="form-group">
