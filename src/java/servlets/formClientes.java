@@ -45,8 +45,8 @@ public class formClientes extends HttpServlet {
             
             modelo.addClientes nuevoCliente = new modelo.addClientes();
             nuevoCliente.agrega(cliente);
-            RequestDispatcher rd = request.getRequestDispatcher("addClientes.jsp");
-            rd.forward(request, response);
+            RequestDispatcher dispatch = request.getRequestDispatcher("index.jsp");
+            dispatch.forward(request, response);
     }
 
     @Override

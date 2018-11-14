@@ -8,34 +8,33 @@ package modelo;
 import conexion.ConexionJDBC;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 
-/**
- *
- * @author Angel
- */
+
 public class addClientes {
-    List<Cliente> usuario = new ArrayList<>();
-    
-    public addClientes(){
-        if(usuario==null){
-            usuario = new ArrayList();     
-        }
-    }  
-        
+  
        public void agrega(Cliente cliente){
             ConexionJDBC con = new ConexionJDBC();    
             con.conectar();
-            String sql = "INSERT INTO Cliente(id_cliente, nombre, apellidos, dui, nit,fechanacimiento, membresia)"
-                        + "VALUES(1,hola,adios,milagro,prueba,esta,g)";
+            String sql = "INSERT INTO public.\"Cliente\" (nombre,apellidos,dui,nit,fechanacimiento,membresia)"+"VALUES(?,?,?,?,?,?)";
+            String status = "";
             try(PreparedStatement pst = con.getConexion().prepareStatement(sql)){
-                  usuario.add(cliente);
+                pst.setString(1, cliente.nombre);
+                pst.setString(2, cliente.apellido);
+                pst.setString(3, cliente.dui);
+                pst.setString(4, cliente.nit);
+                pst.setString(5, cliente.nacimiento);
+                pst.setString(6, cliente.membresia);
+                int i = pst.executeUpdate();
+                if (i != 0) {
+                    status = "Inserted";
+                } else {
+                    status = "Not Inserted";
+                 }
+                con.conectar().close();
+ 
             } catch (SQLException ex) {
-            Logger.getLogger(addClientes.class.getName()).log(Level.SEVERE, null, ex);
+                ex.printStackTrace();         
         }
             
             

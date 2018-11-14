@@ -26,7 +26,7 @@ public class ConexionJDBC {
             Class.forName(driverDb);
              conexion = DriverManager.getConnection(url, user, pass);
              if(!conexion.isClosed()){
-                 System.out.println("Error");               
+                 System.out.println("Exito Conexion");               
              }
              return conexion;
         } catch (ClassNotFoundException | SQLException ex){
