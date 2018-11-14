@@ -38,7 +38,6 @@ public class ConexionJDBC {
     
     public Connection getConexion(){
         return conexion;
-    
     }
     
 }
