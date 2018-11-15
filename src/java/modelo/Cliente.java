@@ -10,7 +10,7 @@ package modelo;
  * @author Angel Cotto
  */
 public class Cliente {
-    
+    Integer codigo;
     String nombre;
     String apellido;
     String dui;
@@ -22,7 +22,8 @@ public class Cliente {
        
     }
    
-    public Cliente(String nombre, String apellido, String dui, String nit, String nacimiento, String membresia) {
+    public Cliente(Integer codigo, String nombre, String apellido, String dui, String nit, String nacimiento, String membresia) {
+        this.codigo = codigo;
         this.nombre = nombre;
         this.apellido = apellido;
         this.dui = dui;
@@ -77,6 +78,14 @@ public class Cliente {
 
     public void setMembresia(String membresia) {
         this.membresia = membresia;
+    }
+    
+        public Integer getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Integer codigo) {
+        this.codigo = codigo;
     }
     
     

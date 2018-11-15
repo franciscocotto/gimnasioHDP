@@ -19,6 +19,10 @@ $('#save-admin').click(function () {
     $('#agregar-submit').click(function () {
         $("#agregaruser").validate();
     });
+    
+     $('#editar-submit').click(function () {
+        $("#editaruser").validate();
+    });
 
 
  $('#busqueda-input').click(function () {

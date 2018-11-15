@@ -7,8 +7,15 @@ package servlets;
 
 
 import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
+import conexion.ConexionJDBC;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -39,7 +46,8 @@ public class formEditClientes extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        try {
+            String Id = request.getParameter("codigo");
             String nombre = request.getParameter("nombre");
             String apellido = request.getParameter("apellidos");
             String dui = request.getParameter("dui");
@@ -48,7 +56,7 @@ public class formEditClientes extends HttpServlet {
             String membresia = request.getParameter("membresia");
             
             modelo.Cliente cliente = new modelo.Cliente();
-            
+            cliente.setCodigo(Integer.parseInt(Id));
             cliente.setNombre(nombre);
             cliente.setApellido(apellido);
             cliente.setDui(dui);
@@ -57,16 +65,21 @@ public class formEditClientes extends HttpServlet {
             cliente.setMembresia(membresia);
             
             modelo.addClientes nuevoCliente = new modelo.addClientes();
-            nuevoCliente.agrega(cliente);
-            RequestDispatcher dispatch = request.getRequestDispatcher("index.jsp");
-            dispatch.forward(request, response);
-        
-       // processRequest(request, response);
-    }
+            nuevoCliente.edita(cliente);
+            ConexionJDBC con = new ConexionJDBC();
+            Connection  cn = con.conectar();  
+            String sql12= "SELECT id_campo, nombre, apellidos, dui, nit, fechanacimiento, membresia\n" +
+                    "FROM public.\"Cliente\" ORDER BY id_campo;";
+            Statement st = cn.createStatement();
+            ResultSet rs = st.executeQuery(sql12);           
+        } catch (SQLException ex) {
+                    System.out.println("error: "+ex );
+                
 
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }
+ 
 
 }
+        response.sendRedirect("index.jsp");
+    }
+    }
+

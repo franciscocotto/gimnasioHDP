@@ -12,7 +12,7 @@
 
 <%conexion.ConexionJDBC con = new conexion.ConexionJDBC();
           Connection  cn = con.conectar();
-            String sql1="select * from public.\"Cliente\"";
+            String sql1="select * from public.\"Cliente\"";        
             Statement st;
             
                 try {

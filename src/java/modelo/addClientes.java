@@ -27,9 +27,9 @@ public class addClientes {
                 pst.setString(6, cliente.membresia);
                 int i = pst.executeUpdate();
                 if (i != 0) {
-                    status = "Inserted";
+                    status = "Guardado";
                 } else {
-                    status = "Not Inserted";
+                    status = "No Guardado";
                  }
                 con.conectar().close();
  
@@ -39,7 +39,37 @@ public class addClientes {
             
             
        }
-
+       
+         public void edita(Cliente cliente){
+            ConexionJDBC con = new ConexionJDBC();    
+            con.conectar();
+            String sql = "UPDATE public.\"Cliente\"\n" +
+            "SET  nombre=?, apellidos=?, dui=?, nit=?, fechanacimiento=?, membresia=?\n" +
+            "WHERE  id_campo="+cliente.codigo+";";
+            String status = "";
+            try(PreparedStatement pst = con.getConexion().prepareStatement(sql)){
+                pst.setString(1, cliente.nombre);
+                pst.setString(2, cliente.apellido);
+                pst.setString(3, cliente.dui);
+                pst.setString(4, cliente.nit);
+                pst.setString(5, cliente.nacimiento);
+                pst.setString(6, cliente.membresia);
+                int i = pst.executeUpdate();
+                 if (i != 0) {
+                    status = "Guardado";
+                } else {
+                    status = "No Guardado";
+                 }
+                con.conectar().close();
+ 
+            } catch (SQLException ex) {
+                ex.printStackTrace();         
+        }
+            
+            
+            
+       }
+      
           
         
 }

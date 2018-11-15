@@ -16,12 +16,12 @@
                     <i class="fa pg2 fa-fw fa-users"></i> Editar Cliente
                 </h4>
             </div>
-            <form id="editaruser" action="" method="post" class="resetform form-horizontal">
+            <form id="editaruser" action="formEditClientes" method="post" class="resetform form-horizontal">
                 <div class="modal-body">
                      <div class="form-group">
                         <label class="col-md-3 control-label"><strong class="colorred">*</strong>ID</label>
                         <div class="col-md-8">
-                            <input class="form-control addcodigo" type="text" name="codigo" disabled/>    
+                            <input class="form-control addcodigo" type="text" name="codigo" readonly />    
                         </div>
                     </div>
                     <div class="form-group letra">
@@ -39,13 +39,13 @@
                     <div class="form-group numero">
                         <label class="col-md-3 control-label"><strong class="colorred">*</strong>DUI:</label>
                         <div class="col-md-8">
-                            <input class="form-control adddui" type="text" name="dui" placeholder="Ingresar el DUI del Cliente" required="required" maxlength="10" minlength="10"/>    
+                            <input class="form-control dui adddui" type="text" name="dui" placeholder="Ingresar el DUI del Cliente" required="required" maxlength="10" minlength="10"/>    
                         </div>
                     </div>
                     <div class="form-group numero">
                         <label class="col-md-3 control-label"><strong class="colorred">*</strong>NIT:</label>
                         <div class="col-md-8">
-                            <input class="form-control addnnit" type="text" name="nit" placeholder="Ingresar el NIT del Cliente" required="required" maxlength="17" minlength="17"/>    
+                            <input class="form-control nit addnnit" type="text" name="nit" placeholder="Ingresar el NIT del Cliente" required="required" maxlength="17" minlength="17"/>    
                         </div>
                     </div>
                     <div class="form-group">
@@ -71,7 +71,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-                    <button type="submit" id="agregar-submit" class="btn btn-success">Actualizar</button>
+                    <button type="submit" id="editar-submit" class="btn btn-success">Actualizar</button>
                 </div>
             </form>
         </div>
