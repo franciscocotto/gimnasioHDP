@@ -26,8 +26,20 @@ public class formClientes extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-  
-            String nombre = request.getParameter("nombre");
+          
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        processRequest(request, response);
+    }
+
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+          String nombre = request.getParameter("nombre");
             String apellido = request.getParameter("apellidos");
             String dui = request.getParameter("dui");
             String nit = request.getParameter("nit");
@@ -45,21 +57,9 @@ public class formClientes extends HttpServlet {
             
             modelo.addClientes nuevoCliente = new modelo.addClientes();
             nuevoCliente.agrega(cliente);
-            RequestDispatcher dispatch = request.getRequestDispatcher("index.jsp");
-            dispatch.forward(request, response);
-    }
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+           // RequestDispatcher dispatch = request.getRequestDispatcher("index.jsp");
+            //dispatch.forward(request, response);
+            response.sendRedirect("index.jsp");
     }
 
     @Override

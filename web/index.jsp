@@ -29,7 +29,6 @@
         <script src="js/scripts.js"></script>
         <script>
            
-        $(document).ready(function() {
             $('a.edit').on('click', function() {
             var myModal = $('#editarusuario');
              //capturar datos desde tabla
@@ -48,16 +47,22 @@
             $('.adddui', myModal).val(ndui);
             $('.addnnit', myModal).val(nnit);
             $('.addnacimiento', myModal).val(nacimiento);
+            if(membresia==="Bronce\n"){
             $('.addmembresia', myModal).prop('selectedIndex',0);
-            
-        
+            }
+            else if(membresia==="Plata\n"){
+             $('.addmembresia', myModal).prop('selectedIndex',1);
+            }
+            else if(membresia==="Oro\n"){
+             $('.addmembresia', myModal).prop('selectedIndex',2);
+            }
            
             //mostrar modal
             myModal.modal({ show: true });
               return false;
             });
-             });
-        </script>
 
+        </script>
+  
     </body>
 </html>

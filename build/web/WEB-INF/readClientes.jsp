@@ -13,10 +13,10 @@
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="page-alerth" style="margin-top:0;">
-                    <i class="fa pg2 fa-fw fa-users"></i> Agregar Nuevos Clientes
+                    <i class="fa pg2 fa-fw fa-users"></i> Editar Cliente
                 </h4>
             </div>
-            <form id="agregaruser" action="formClientes" method="post" class="resetform form-horizontal">
+            <form id="editaruser" action="" method="post" class="resetform form-horizontal">
                 <div class="modal-body">
                      <div class="form-group">
                         <label class="col-md-3 control-label"><strong class="colorred">*</strong>ID</label>

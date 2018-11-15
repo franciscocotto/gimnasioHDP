@@ -411,11 +411,11 @@ font-weight:bold;
 .center{
     display: block;
 margin: auto;
-width: 150px;
+width: 50px;
 }
-.dataTables_scrollHeadInner{
+/*.dataTables_scrollHeadInner{
     width: 100% !Important;
-}
+}*/
 .center2{
     width: 100%;
     display: block;
