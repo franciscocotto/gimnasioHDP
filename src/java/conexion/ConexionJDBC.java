@@ -10,11 +10,11 @@ import java.util.logging.Logger;
 
 public class ConexionJDBC {
     Connection conexion = null;
-    String db= "Gimnasio";
+    String db= "gimnasio";
     String host = "localhost";
     String port = "5432";
     String user  = "postgres";
-    String pass = "admin";
+    String pass = "1234";
     
     
     String  driverDb = "org.postgresql.Driver";

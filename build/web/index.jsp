@@ -27,7 +27,37 @@
        <jsp:include page="WEB-INF/Clientes.jsp" />
         
         <script src="js/scripts.js"></script>
-   
+        <script>
+           
+        $(document).ready(function() {
+            $('a.edit').on('click', function() {
+            var myModal = $('#editarusuario');
+             //capturar datos desde tabla
+            var currentTR = $(this).closest('tr');
+            var cod = currentTR.find("td.codigo").text();
+            var nombre = currentTR.find("td.nombre").text();
+            var apellido = currentTR.find("td.apellido").text();
+            var ndui = currentTR.find("td.ndui").text();
+            var nnit = currentTR.find("td.nnit").text();
+            var nacimiento = currentTR.find("td.nacimiento").text();
+            var membresia = currentTR.find("td.membresia").text();
+           //enviar datos a modal
+            $('.addcodigo', myModal).val(cod);
+            $('.addnombre', myModal).val(nombre);
+            $('.addapellido', myModal).val(apellido);
+            $('.adddui', myModal).val(ndui);
+            $('.addnnit', myModal).val(nnit);
+            $('.addnacimiento', myModal).val(nacimiento);
+            $('.addmembresia', myModal).prop('selectedIndex',0);
+            
+        
+           
+            //mostrar modal
+            myModal.modal({ show: true });
+              return false;
+            });
+             });
+        </script>
 
     </body>
 </html>

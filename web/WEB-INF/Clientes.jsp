@@ -71,7 +71,7 @@
 
                             <div class="row gray-row">
                                 <article class="center2" >
-                                     <jsp:include page="tableClientes.jsp" />
+                                     <jsp:include page="tableClientes.jsp" /> 
                                 </article>
                             </div>
                             <!-- /.container-fluid -->
@@ -87,6 +87,7 @@
  <jsp:include page="alert.jsp" />
 <!-- Fin Alert Dialog -->
  <jsp:include page="addClientes.jsp" />
+  <jsp:include page="readClientes.jsp" />
     </body>
 
 </html>

@@ -7,9 +7,11 @@
             <file>file:/C:/Users/Moi/Documents/NetBeansProjects/gymnasio/web/index.html</file>
         </group>
         <group>
-            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/gimnasio/src/java/Clientes/addClientes.java</file>
-            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/gimnasio/web/login.html</file>
-            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/gimnasio/web/index.html</file>
+            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/gimnasio/src/java/modelo/addClientes.java</file>
+            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/gimnasio/src/java/conexion/ConexionJDBC.java</file>
+            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/gimnasio/web/index.jsp</file>
+            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/gimnasio/src/java/servlets/formClientes.java</file>
+            <file>file:/C:/Users/Angel/Documents/NetBeansProjects/gimnasio/src/java/modelo/Cliente.java</file>
         </group>
     </open-files>
 </project-private>

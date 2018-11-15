@@ -36,15 +36,15 @@
     <tbody>
           <%while(r.next()){%> 
         <tr>
-            <td><%out.println(r.getString("id_campo"));%></td>
-            <td><%out.println(r.getString("nombre"));%></td>
-            <td><%out.println(r.getString("apellidos"));%></td>
-            <td><%out.println(r.getString("dui"));%></td>
-            <td><%out.println(r.getString("nit"));%></td>
-            <td><%out.println(r.getString("fechanacimiento"));%></td>
-            <td><%out.println(r.getString("membresia"));%></td>
+            <td class="codigo"><%out.println(r.getString("id_campo"));%></td>
+            <td class="nombre"><%out.println(r.getString("nombre"));%></td>
+            <td class="apellido"><%out.println(r.getString("apellidos"));%></td>
+            <td class="ndui"><%out.println(r.getString("dui"));%></td>
+            <td class="nnit"><%out.println(r.getString("nit"));%></td>
+            <td class="nacimiento"><%out.println(r.getString("fechanacimiento"));%></td>
+            <td class="membresia"><%out.println(r.getString("membresia"));%></td>
             <td>
-                <button type="button" class="center btn btn-default"  data-target="#agregarusuario" data-toggle="modal">Ver Datos</button>
+                <a class="center btn btn-default edit">Ver Datos</a>
             </td>
             <td>
                 <button type="button" class="center btn btn-default " data-toggle="modal" data-target="#confirmDelete">Eliminar </button>
