@@ -3,7 +3,6 @@
     Created on : 12-nov-2018, 23:56:28
     Author     : Angel
 --%>
-
 <%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
@@ -12,7 +11,7 @@
 
 <%conexion.ConexionJDBC con = new conexion.ConexionJDBC();
           Connection  cn = con.conectar();
-            String sql1="select * from public.\"Cliente\"";        
+            String sql1="select * from public.\"Cliente\" ORDER BY id_campo;";     
             Statement st;
             
                 try {
@@ -25,6 +24,7 @@
             <th>N°</th>
             <th>Nombre</th>
             <th>Apellido</th>
+            <th>Sexo</th>
             <th>DUI</th>
             <th>NIT</th>
             <th>ID_Cliente</th>
@@ -40,6 +40,7 @@
             <td></td>
             <td class="nombre"><%out.println(r.getString("nombre"));%></td>
             <td class="apellido"><%out.println(r.getString("apellidos"));%></td>
+            <td class="sexo"><%out.println(r.getString("sexo"));%></td>
             <td class="ndui"><%out.println(r.getString("dui"));%></td>
             <td class="nnit"><%out.println(r.getString("nit"));%></td>
             <td class="codigo"><%out.println(r.getString("id_campo"));%></td>
@@ -47,21 +48,19 @@
             <td class="membresia"><%out.println(r.getString("membresia"));%></td>
             <td>
                 <a class="center btn btn-default edit">
-                    <span class="glyphicon glyphicon-pencil"></span>
-                    
+                    <span class="glyphicon glyphicon-pencil"></span>                  
                 </a>
             </td>
             <td>
-                <button type="button" class="center btn btn-default " data-toggle="modal" data-target="#confirmDelete">
-                    <span class="glyphicon glyphicon-trash"> </span>
-                </button>
+                <a class="center btn btn-default delete">
+                   <span class="glyphicon glyphicon-trash"> </span>                 
+                </a>
             </td>
 
         </tr> 
          <%}%>
     </tbody>
 </table>
-    
      <% } catch (SQLException ex) {
                     System.out.println("error: "+ex );
      }%>     

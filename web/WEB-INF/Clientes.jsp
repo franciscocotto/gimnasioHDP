@@ -5,9 +5,7 @@
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
         <div id="wrapper">
-            <!-- Navigation -->
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                         <span class="sr-only">Toggle navigation</span>
@@ -19,7 +17,6 @@
                         <img src="images/logo.png">
                     </a>
                 </div>
-                <!-- Top Menu Items -->
                 <ul class="nav navbar-right top-nav">
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>&nbsp;Angel Cotto <b class="caret"></b></a>
@@ -30,7 +27,6 @@
                         </ul>
                     </li>
                 </ul>
-                <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav side-nav">
                         <li class="active">
@@ -43,14 +39,9 @@
                         </li>                 
                     </ul>
                 </div>
-                <!-- /.navbar-collapse -->
             </nav>
-
             <div id="page-wrapper">
-
                 <div class="container-fluid">
-
-                    <!-- Page Heading -->
                     <div class="row">
                         <div class="col-lg-10">
                             <h1 class="page-header" style="margin-top:0;">
@@ -61,11 +52,10 @@
                         <div class="col-lg-2">
                             <button type="button" id="save-notify" name="regresar" class="col-lg-12 t5 btn-left btn btn-default" data-target="#agregarusuario" data-toggle="modal">
                                 <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-                                Agregar Usuario
+                                Agregar Cliente
                             </button>
                         </div>
                     </div>
-                    <!-- /.row -->
                     <div id="page-wrapper">
                         <div class="container-fluid">
 
@@ -74,20 +64,16 @@
                                      <jsp:include page="tableClientes.jsp" /> 
                                 </article>
                             </div>
-                            <!-- /.container-fluid -->
                         </div>
-                        <!-- /#page-wrapper -->
                     </div>
                     <jsp:include page="footer.jsp" />
-                    <!-- /#wrapper -->
                 </div>
             </div>
         </div>
-<!-- Alert Dialog -->
+<!-- Modals -->
  <jsp:include page="alert.jsp" />
-<!-- Fin Alert Dialog -->
  <jsp:include page="addClientes.jsp" />
-  <jsp:include page="readClientes.jsp" />
+ <jsp:include page="readClientes.jsp" />
     </body>
 
 </html>

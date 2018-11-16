@@ -7,6 +7,7 @@ package modelo;
 
 import conexion.ConexionJDBC;
 import java.sql.PreparedStatement;
+import java.sql.Statement;
 import java.sql.SQLException;
 
 
@@ -16,15 +17,16 @@ public class addClientes {
        public void agrega(Cliente cliente){
             ConexionJDBC con = new ConexionJDBC();    
             con.conectar();
-            String sql = "INSERT INTO public.\"Cliente\" (nombre,apellidos,dui,nit,fechanacimiento,membresia)"+"VALUES(?,?,?,?,?,?)";
+            String sql = "INSERT INTO public.\"Cliente\" (nombre,apellidos,dui,nit,sexo,fechanacimiento,membresia)"+"VALUES(?,?,?,?,?,?,?)";
             String status = "";
             try(PreparedStatement pst = con.getConexion().prepareStatement(sql)){
                 pst.setString(1, cliente.nombre);
                 pst.setString(2, cliente.apellido);
                 pst.setString(3, cliente.dui);
                 pst.setString(4, cliente.nit);
-                pst.setString(5, cliente.nacimiento);
-                pst.setString(6, cliente.membresia);
+                pst.setString(5, cliente.sexo);
+                pst.setString(6, cliente.nacimiento);
+                pst.setString(7, cliente.membresia);
                 int i = pst.executeUpdate();
                 if (i != 0) {
                     status = "Guardado";
@@ -44,7 +46,7 @@ public class addClientes {
             ConexionJDBC con = new ConexionJDBC();    
             con.conectar();
             String sql = "UPDATE public.\"Cliente\"\n" +
-            "SET  nombre=?, apellidos=?, dui=?, nit=?, fechanacimiento=?, membresia=?\n" +
+            "SET  nombre=?, apellidos=?, dui=?, nit=?, sexo=?, fechanacimiento=?, membresia=?\n" +
             "WHERE  id_campo="+cliente.codigo+";";
             String status = "";
             try(PreparedStatement pst = con.getConexion().prepareStatement(sql)){
@@ -52,13 +54,14 @@ public class addClientes {
                 pst.setString(2, cliente.apellido);
                 pst.setString(3, cliente.dui);
                 pst.setString(4, cliente.nit);
-                pst.setString(5, cliente.nacimiento);
-                pst.setString(6, cliente.membresia);
+                pst.setString(5, cliente.sexo);
+                pst.setString(6, cliente.nacimiento);
+                pst.setString(7, cliente.membresia);
                 int i = pst.executeUpdate();
                  if (i != 0) {
-                    status = "Guardado";
+                    status = "Editado";
                 } else {
-                    status = "No Guardado";
+                    status = "No Editado";
                  }
                 con.conectar().close();
  
@@ -70,6 +73,14 @@ public class addClientes {
             
        }
       
+       public void elimina(Cliente cliente) throws SQLException{
+            ConexionJDBC con = new ConexionJDBC();    
+            con.conectar();
+            Statement stmt =  con.conectar().createStatement();
+            stmt.execute( "DELETE FROM public.\"Cliente\"\n" +
+           "WHERE  id_campo="+cliente.codigo+";");             
+            
+       }
           
         
 }

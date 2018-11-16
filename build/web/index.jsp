@@ -3,7 +3,6 @@
     Created on : 12-nov-2018, 23:40:36
     Author     : Angel
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -36,6 +35,7 @@
             var cod = currentTR.find("td.codigo").text();
             var nombre = currentTR.find("td.nombre").text();
             var apellido = currentTR.find("td.apellido").text();
+            var sexo = currentTR.find("td.sexo").text();
             var ndui = currentTR.find("td.ndui").text();
             var nnit = currentTR.find("td.nnit").text();
             var nacimiento = currentTR.find("td.nacimiento").text();
@@ -44,6 +44,12 @@
             $('.addcodigo', myModal).val(cod);
             $('.addnombre', myModal).val(nombre);
             $('.addapellido', myModal).val(apellido);
+           if(sexo==="Hombre\n"){
+            $('.addsexo', myModal).prop('selectedIndex',0);
+            }
+            else if(sexo==="Mujer\n"){
+             $('.addsexo', myModal).prop('selectedIndex',1);
+            }
             $('.adddui', myModal).val(ndui);
             $('.addnnit', myModal).val(nnit);
             $('.addnacimiento', myModal).val(nacimiento);
@@ -62,7 +68,18 @@
               return false;
             });
 
+
+          $('a.delete').on('click', function() {
+            var myModal = $('#confirmDelete');
+             //capturar datos desde tabla
+            var currentTR = $(this).closest('tr');
+            var cod = currentTR.find("td.codigo").text();
+           //enviar datos a modal
+            $('.addcodigo', myModal).val(cod);
+            //mostrar modal
+            myModal.modal({ show: true });
+              return false;
+            });
         </script>
-  
     </body>
 </html>

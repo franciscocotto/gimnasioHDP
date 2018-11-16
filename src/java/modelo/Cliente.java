@@ -15,6 +15,7 @@ public class Cliente {
     String apellido;
     String dui;
     String nit;
+    String sexo;
     String nacimiento;
     String membresia;
 
@@ -22,14 +23,23 @@ public class Cliente {
        
     }
    
-    public Cliente(Integer codigo, String nombre, String apellido, String dui, String nit, String nacimiento, String membresia) {
+    public Cliente(Integer codigo, String nombre, String apellido, String dui, String nit, String sexo, String nacimiento, String membresia) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.apellido = apellido;
         this.dui = dui;
         this.nit = nit;
+        this.sexo = sexo;
         this.nacimiento = nacimiento;
         this.membresia = membresia;
+    }
+
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
     }
     
     public String getNombre() {

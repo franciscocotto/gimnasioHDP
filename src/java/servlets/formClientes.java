@@ -6,10 +6,7 @@
 package servlets;
 
 
-import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Int;
 import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -43,6 +40,7 @@ public class formClientes extends HttpServlet {
             String apellido = request.getParameter("apellidos");
             String dui = request.getParameter("dui");
             String nit = request.getParameter("nit");
+            String sexo = request.getParameter("sexo");
             String nacimiento = request.getParameter("fechanacimiento");
             String membresia = request.getParameter("membresia");
             
@@ -52,6 +50,7 @@ public class formClientes extends HttpServlet {
             cliente.setApellido(apellido);
             cliente.setDui(dui);
             cliente.setNit(nit);
+            cliente.setSexo(sexo);
             cliente.setNacimiento(nacimiento);
             cliente.setMembresia(membresia);
             
@@ -62,9 +61,5 @@ public class formClientes extends HttpServlet {
             response.sendRedirect("index.jsp");
     }
 
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }
 
 }

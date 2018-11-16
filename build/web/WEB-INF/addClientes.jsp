@@ -3,7 +3,6 @@
     Created on : 12-nov-2018, 23:45:32
     Author     : Angel
 --%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!-- Modal Desvincular -->
 <div class="modal fade resette" id="agregarusuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -27,6 +26,15 @@
                         <label class="col-md-3 control-label"><strong class="colorred">*</strong>Apellido:</label>
                         <div class="col-md-8">
                             <input class="form-control" type="text" name="apellidos" placeholder="Ingresar el Apellido del Cliente" required="required" maxlength="60" minlength="3"/>    
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label class="col-md-3 control-label">Sexo</label>
+                        <div class="col-md-5">
+                            <select class="form-control" required name="sexo">
+                               <option>Hombre</option>
+                                <option>Mujer</option>                          
+                            </select>
                         </div>
                     </div>
                     <div class="form-group numero">

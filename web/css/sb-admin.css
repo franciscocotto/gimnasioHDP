@@ -7,11 +7,8 @@
 /* Global Styles */
 @import url("bootstrap.css");
 @import url("bootstrap-switch.css");
-@import url("plugins/morris.css");
-@import url("graphic.css");
 @import url("boostrap-dialog.css");
 @import url("jquery.dataTables.css");
-@import url("dataTables.bootstrap.css");
 @import url("bootstrap-datetimepicker.css");
 @import url("../font-awesome/css/font-awesome.min.css");
 
@@ -20,6 +17,8 @@ body {
     margin-top: 100px;
     background-color: #070b07;
 }
+
+
 
 @media(min-width:768px) {
     body {

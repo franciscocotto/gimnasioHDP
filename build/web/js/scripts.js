@@ -5,7 +5,6 @@ document.write('<script type="text/javascript" src="js/dataTables.bootstrap.js">
 document.write('<script type="text/javascript" src="js/jquery-ui.js"></script>');
 document.write('<script type="text/javascript" src="js/jquery.mask.min.js"></script>');
 document.write('<script type="text/javascript" src="js/jquery.maskMoney.js"></script>');
-document.write('<script type="text/javascript" src="js/bootstrap-switch.js"></script>');
 document.write('<script type="text/javascript" src="js/bootstrap-dialog.js"></script>');
 document.write('<script type="text/javascript" src="js/jquery.validate.js"></script>');
 document.write('<script type="text/javascript" src="js/formvalidate.js"></script>');

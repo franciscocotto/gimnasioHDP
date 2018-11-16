@@ -10,20 +10,26 @@
 <div class="modal fade resette" id="editarusuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
+             <form id="editaruser" action="formEditClientes" method="post" class="resetform form-horizontal">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="col-md-6">
                 <h4 class="page-alerth" style="margin-top:0;">
                     <i class="fa pg2 fa-fw fa-users"></i> Editar Cliente
                 </h4>
-            </div>
-            <form id="editaruser" action="formEditClientes" method="post" class="resetform form-horizontal">
-                <div class="modal-body">
-                     <div class="form-group">
-                        <label class="col-md-3 control-label"><strong class="colorred">*</strong>ID</label>
-                        <div class="col-md-8">
+                </div>
+                <div class="col-md-5">
+                  <div class="form-group">
+                        <label class="col-md-6 control-label">ID Cliente</label>
+                        <div class="col-md-6">
                             <input class="form-control addcodigo" type="text" name="codigo" readonly />    
                         </div>
+                    </div>                   
                     </div>
+                 <div class="col-md-1">
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    </div>
+                 </div>       
+                <div class="modal-body">
                     <div class="form-group letra">
                         <label class="col-md-3 control-label"><strong class="colorred">*</strong>Nombre:</label>
                         <div class="col-md-8">
@@ -34,6 +40,15 @@
                         <label class="col-md-3 control-label"><strong class="colorred">*</strong>Apellido:</label>
                         <div class="col-md-8">
                             <input class="form-control addapellido" type="text" name="apellidos" placeholder="Ingresar el Apellido del Cliente" required="required" maxlength="60" minlength="3"/>    
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-3 control-label">Sexo</label>
+                        <div class="col-md-5">
+                            <select class="form-control addsexo" required name="sexo">
+                                <option>Hombre</option>
+                                <option>Mujer</option>                           
+                            </select>
                         </div>
                     </div>
                     <div class="form-group numero">
