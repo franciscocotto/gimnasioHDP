@@ -47,6 +47,7 @@ CREATE TABLE public."Cliente" (
     id_campo SERIAL PRIMARY KEY,
     nombre character varying(20),
     apellidos character varying(20),
+	sexo character varying(10),
     dui character varying(10),
     nit character varying(18),
     fechanacimiento character varying(20),
