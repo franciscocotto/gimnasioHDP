@@ -25,6 +25,8 @@
             <th>Nombre Membresia</th>
             <th>ID_membresia</th>
             <th>Descripci&oacute;n</th>
+            <th>Costo</th>
+            <th>Beneficios</th>
             <th>Ver</th>
             <th>Eliminar</th>             
         </tr>
@@ -33,9 +35,11 @@
           <%while(r.next()){%> 
         <tr>
             <td></td>
-            <td class="apellido"><%out.println(r.getString("nombremembresia"));%></td>
-            <td class="sexo"><%out.println(r.getString("id_membresia"));%></td>
-            <td class="edad"><%out.println(r.getString("descripcionmembresia"));%></td>
+            <td class="nombre"><%out.println(r.getString("nombremembresia"));%></td>
+            <td class="codigo"><%out.println(r.getString("id_membresia"));%></td>
+            <td class="descripcion"><%out.println(r.getString("descripcion"));%></td>
+            <td class="costo">$<%out.println(r.getString("costo"));%></td>
+            <td class="beneficios"><%out.println(r.getString("beneficios"));%></td>
             <td>
                 <a class="center btn btn-default edit">
                     <span class="glyphicon glyphicon-pencil"></span>                  

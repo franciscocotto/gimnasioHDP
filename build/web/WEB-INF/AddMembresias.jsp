@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="col-lg-3">
-                            <button type="button" id="save-notify" name="regresar" class="col-lg-12 t5 btn-left btn btn-default" data-target="#agregarusuario" data-toggle="modal">
+                            <button type="button" id="save-notify" name="regresar" class="col-lg-12 t5 btn-left btn btn-default" data-target="#agregarmembresia" data-toggle="modal">
                                 <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
                                 Agregar Membresia
                             </button>
@@ -75,9 +75,9 @@
             </div>
         </div>
 <!-- Modals -->
- <jsp:include page="alert.jsp" />
- <jsp:include page="addClientes.jsp" />
- <jsp:include page="readClientes.jsp" />
+ <jsp:include page="deleteMembresia.jsp" />
+ <jsp:include page="addMembresia.jsp" />
+ <jsp:include page="readMembresia.jsp" />
     </body>
 
 </html>

@@ -29,44 +29,38 @@
         <script>
            
             $('a.edit').on('click', function() {
-            var myModal = $('#editarusuario');
+            var myModal = $('#readmembresia');
              //capturar datos desde tabla
             var currentTR = $(this).closest('tr');
-            var cod = currentTR.find("td.codigo").text();
             var nombre = currentTR.find("td.nombre").text();
-            var apellido = currentTR.find("td.apellido").text();
-            var edad = currentTR.find("td.edad").text();
-            var sexo = currentTR.find("td.sexo").text();
-            var ndui = currentTR.find("td.ndui").text();
-            var nnit = currentTR.find("td.nnit").text();
-            var ingreso = currentTR.find("td.ingreso").text();
-            var membresia = currentTR.find("td.idmembresia").text().replace(/\n/g, '');
+            var cod = currentTR.find("td.codigo").text();
+            var descripcion = currentTR.find("td.descripcion").text();
+            var costo = currentTR.find("td.costo").text().replace("$", "");;
+            var beneficios = currentTR.find("td.beneficios").text();  
+            var array = [];
+//            for(j=0;j<beneficios.length;j++){
+//                array[k]               
+//            }
+           // var membresia = currentTR.find("td.idmembresia").text().replace(/\n/g, '');
            //enviar datos a modal
             $('.addcodigo', myModal).val(cod);
             $('.addnombre', myModal).val(nombre);
-            $('.addapellido', myModal).val(apellido);
-            $('.addedad', myModal).val(edad);
-           if(sexo==="Hombre\n"){
-            $('.addsexo', myModal).prop('selectedIndex',0);
-            }
-            else if(sexo==="Mujer\n"){
-             $('.addsexo', myModal).prop('selectedIndex',1);
-            }
-            $('.adddui', myModal).val(ndui);
-            $('.addnnit', myModal).val(nnit);
-            $('.addingreso', myModal).val(ingreso);
-            $('.addmembresia', myModal).val(membresia);
-//            if(membresia==="Bronce\n"){
-//            $('.addmembresia', myModal).prop('selectedIndex',0);
-//            }
-//            else if(membresia==="Plata\n"){
-//             $('.addmembresia', myModal).prop('selectedIndex',1);
-//            }
-//            else if(membresia==="Oro\n"){
-//             $('.addmembresia', myModal).prop('selectedIndex',2);
-//            }
+            $('.adddescripcion', myModal).val(descripcion);
+            $('.addcosto', myModal).val(costo);
+//            for(k=1;k<array.length;k++)
+//            {
+//                
+//                    array[k].checked = true;
+//            } 
+           $(".c1", myModal).attr("checked", true);
+           $(".c2", myModal).attr("checked", true);
+           $(".c3", myModal).attr("checked", true);
+           $(".c4", myModal).attr("checked", true);
+           $(".c5", myModal).attr("checked", true);
+           $(".c6", myModal).attr("checked", true);
+           $(".c7", myModal).attr("checked", true);
+
            
-            //mostrar modal
             myModal.modal({ show: true });
               return false;
             });
@@ -83,6 +77,13 @@
             myModal.modal({ show: true });
               return false;
             });
+            
+
+        $(function() {
+            $('#money').maskMoney();
+        })
+
+            
         </script>
     </body>
 </html>

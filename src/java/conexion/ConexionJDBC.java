@@ -14,7 +14,7 @@ public class ConexionJDBC {
     String host = "localhost";
     String port = "5432";
     String user  = "postgres";
-    String pass = "1234";
+    String pass = "admin";
     
     
     String  driverDb = "org.postgresql.Driver";

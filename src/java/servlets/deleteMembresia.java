@@ -18,16 +18,16 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author Angel
+ * @author Angel Cotto
  */
-@WebServlet(name = "deleteCliente", urlPatterns = {"/deleteCliente"})
-public class deleteCliente extends HttpServlet {
-    
+@WebServlet(name = "deleteMembresia", urlPatterns = {"/deleteMembresia"})
+public class deleteMembresia extends HttpServlet {
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
     }
-   
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -37,27 +37,22 @@ public class deleteCliente extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-           String Id = request.getParameter("codigo");
-             modelo.Cliente cliente = new modelo.Cliente();
-             cliente.setCodigo(Integer.parseInt(Id));
+             String Id = request.getParameter("codigo");
+             modelo.Membresias membresia = new modelo.Membresias();
+             membresia.setCodigo(Integer.parseInt(Id));
              
-            modelo.addClientes borrarCliente = new modelo.addClientes();
+            modelo.addMembresias borrarMembresia = new modelo.addMembresias();
         try {
-            borrarCliente.elimina(cliente);
+            borrarMembresia.elimina(membresia);
         } catch (SQLException ex) {
-            Logger.getLogger(deleteCliente.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(deleteMembresia.class.getName()).log(Level.SEVERE, null, ex);
         }
-            response.sendRedirect("index.jsp");
+           response.sendRedirect("membresias.jsp");
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
     @Override
     public String getServletInfo() {
         return "Short description";
-    }// </editor-fold>
+    }
 
 }

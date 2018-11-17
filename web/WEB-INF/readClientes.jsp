@@ -4,6 +4,7 @@
     Author     : Angel
 --%>
 
+<%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!-- Modal Desvincular -->
@@ -79,13 +80,19 @@
                             </span>
                         </div>
                     </div>
+                    <jsp:useBean id="con" class="modelo.addClientes" scope="page"></jsp:useBean>
+                     <%
+                         ResultSet rs =con.mostrar();
+                      %>   
                     <div class="form-group">
                         <label class="col-md-3 control-label">Tipo Membresia</label>
                         <div class="col-md-5">
-                            <select class="form-control addmembresia" required name="membresia">
-                                <option value="1">Bronce</option>
-                                <option value="2">Plata</option>
-                                <option value="3">Oro</option>
+                            <select class="form-control" required name="membresia">
+                                 <%
+                                     while(rs.next()){
+                                 %>
+                                <option value="<%=rs.getString("id_membresia")%>"><%=rs.getString("nombremembresia")%></option>
+                                 <%}%>
                             </select>
                         </div>
                     </div>
