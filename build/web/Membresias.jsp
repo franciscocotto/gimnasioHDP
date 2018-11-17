@@ -36,22 +36,28 @@
             var cod = currentTR.find("td.codigo").text();
             var descripcion = currentTR.find("td.descripcion").text();
             var costo = currentTR.find("td.costo").text().replace("$", "");;
-            var beneficios = currentTR.find("td.beneficios").text();  
-            var array = [];
-//            for(j=0;j<beneficios.length;j++){
-//                array[k]               
-//            }
-           // var membresia = currentTR.find("td.idmembresia").text().replace(/\n/g, '');
+            var beneficios = currentTR.find("td.beneficios").text().split(",");  
+            var array = [beneficios];
+               for(j=0;j<beneficios.length;j++){
+                     array[j].prop("checked", true);               
+                }
+
            //enviar datos a modal
             $('.addcodigo', myModal).val(cod);
             $('.addnombre', myModal).val(nombre);
             $('.adddescripcion', myModal).val(descripcion);
             $('.addcosto', myModal).val(costo);
-//            for(k=1;k<array.length;k++)
-//            {
-//                
-//                    array[k].checked = true;
-//            } 
+
+
+
+
+
+
+
+
+
+
+
            $(".c1", myModal).attr("checked", true);
            $(".c2", myModal).attr("checked", true);
            $(".c3", myModal).attr("checked", true);
