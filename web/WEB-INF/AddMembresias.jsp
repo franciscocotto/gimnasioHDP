@@ -29,33 +29,34 @@
                 </ul>
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav side-nav">
-                        <li class="active">
-                            <a href="#">
-                                <i class="fa fa-fw fa-pie-chart"></i> Clientes                    
-                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-triangle  extended">                    
-                                <polygon style="border-color: white;" points="22,20 -5,40 0,0"></polygon>
-                                </svg>
+                        <li>
+                            <a href="index.jsp">
+                                <i class="fa fa-fw fa-pie-chart"></i> Clientes                                                   
                             </a>
                         </li> 
-                         <li>
-                        <a href="Membresias.jsp"><i class="fa fa-fw fa-cog"></i> Membresias</a>
-                        </li>
+                         <li class="active">
+                        <a href="Membresias.jsp"><i class="fa fa-fw fa-cog"></i> Membresias
+                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-triangle  extended">                    
+                                <polygon style="border-color: white;" points="22,20 -5,40 0,0"></polygon>
+                                </svg>
+                        </a>
+                        </li>            
                     </ul>
                 </div>
             </nav>
             <div id="page-wrapper">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-lg-10">
+                        <div class="col-lg-9">
                             <h1 class="page-header" style="margin-top:0;">
-                                <i class="fa pg fa-fw fa-bell"></i> Administraci&oacute;n de Clientes
+                                <i class="fa pg fa-fw fa-bell"></i> Administraci&oacute;n de Membresias
                             </h1>
                         </div>
 
-                        <div class="col-lg-2">
+                        <div class="col-lg-3">
                             <button type="button" id="save-notify" name="regresar" class="col-lg-12 t5 btn-left btn btn-default" data-target="#agregarusuario" data-toggle="modal">
                                 <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
-                                Agregar Cliente
+                                Agregar Membresia
                             </button>
                         </div>
                     </div>
@@ -64,7 +65,7 @@
 
                             <div class="row gray-row">
                                 <article class="center2" >
-                                     <jsp:include page="tableClientes.jsp" /> 
+                                     <jsp:include page="tableMembresias.jsp" /> 
                                 </article>
                             </div>
                         </div>

@@ -36,7 +36,10 @@
                                 <polygon style="border-color: white;" points="22,20 -5,40 0,0"></polygon>
                                 </svg>
                             </a>
-                        </li>                 
+                        </li> 
+                         <li>
+                        <a href="Membresias.jsp"><i class="fa fa-fw fa-cog"></i> Membresias</a>
+                        </li>
                     </ul>
                 </div>
             </nav>

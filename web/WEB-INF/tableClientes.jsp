@@ -11,7 +11,7 @@
 
 <%conexion.ConexionJDBC con = new conexion.ConexionJDBC();
           Connection  cn = con.conectar();
-            String sql="select id_campo, nombre ,apellidos,sexo,edad,dui,nit,fechaingreso,nombremembresia"
+            String sql="select id_campo, nombre ,apellidos,sexo,edad,dui,nit,fechaingreso,id_membresia,nombremembresia"
                     + " from public.\"Cliente\" A INNER JOIN membresia B ON A.membresia=B.id_membresia ORDER BY id_campo;";     
             Statement st;
             
@@ -31,6 +31,7 @@
             <th>NIT</th>
             <th>ID_Cliente</th>
             <th>Fecha Ingreso</th>
+            <th>ID_Membresia</th>
             <th>Membresia</th>
             <th>Ver</th>
             <th>Eliminar</th>             
@@ -46,9 +47,10 @@
             <td class="edad"><%out.println(r.getString("edad"));%></td>
             <td class="ndui"><%out.println(r.getString("dui"));%></td>
             <td class="nnit"><%out.println(r.getString("nit"));%></td>
-            <td class="codigo"><%out.println(r.getString("id_campo"));%></td>
+            <td class="codigo"><center><%out.println(r.getString("id_campo"));%></center></td>
             <td class="ingreso"><%out.println(r.getString("fechaingreso"));%></td>
-            <td class="membresia"><%out.println(r.getString("nombremembresia"));%></td>
+            <td class="idmembresia"><center><%out.println(r.getString("id_membresia"));%></center></td>
+            <td class="membresia"><center><%out.println(r.getString("nombremembresia"));%></center></td>
             <td>
                 <a class="center btn btn-default edit">
                     <span class="glyphicon glyphicon-pencil"></span>                  

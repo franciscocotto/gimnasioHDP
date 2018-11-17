@@ -40,7 +40,7 @@
             var ndui = currentTR.find("td.ndui").text();
             var nnit = currentTR.find("td.nnit").text();
             var ingreso = currentTR.find("td.ingreso").text();
-            var membresia = currentTR.find("td.membresia").text();
+            var membresia = currentTR.find("td.idmembresia").text().replace(/\n/g, '');
            //enviar datos a modal
             $('.addcodigo', myModal).val(cod);
             $('.addnombre', myModal).val(nombre);
@@ -55,15 +55,16 @@
             $('.adddui', myModal).val(ndui);
             $('.addnnit', myModal).val(nnit);
             $('.addingreso', myModal).val(ingreso);
-            if(membresia==="Bronce\n"){
-            $('.addmembresia', myModal).prop('selectedIndex',0);
-            }
-            else if(membresia==="Plata\n"){
-             $('.addmembresia', myModal).prop('selectedIndex',1);
-            }
-            else if(membresia==="Oro\n"){
-             $('.addmembresia', myModal).prop('selectedIndex',2);
-            }
+            $('.addmembresia', myModal).val(membresia);
+//            if(membresia==="Bronce\n"){
+//            $('.addmembresia', myModal).prop('selectedIndex',0);
+//            }
+//            else if(membresia==="Plata\n"){
+//             $('.addmembresia', myModal).prop('selectedIndex',1);
+//            }
+//            else if(membresia==="Oro\n"){
+//             $('.addmembresia', myModal).prop('selectedIndex',2);
+//            }
            
             //mostrar modal
             myModal.modal({ show: true });

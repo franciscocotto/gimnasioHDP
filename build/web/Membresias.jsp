@@ -23,7 +23,7 @@
         <![endif]-->
     </head> 
     <body>
-       <jsp:include page="WEB-INF/Clientes.jsp" />
+       <jsp:include page="WEB-INF/AddMembresias.jsp" />
         
         <script src="js/scripts.js"></script>
         <script>
