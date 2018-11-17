@@ -48,10 +48,11 @@ CREATE TABLE public."Cliente" (
     nombre character varying(20),
     apellidos character varying(20),
 	sexo character varying(10),
+	edad numeric(3),
     dui character varying(10),
     nit character varying(18),
-    fechanacimiento character varying(20),
-    membresia character varying(20)
+    fechaingreso character varying(20),
+    membresia numeric(3)
 );
 
 

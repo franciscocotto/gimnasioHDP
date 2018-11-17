@@ -11,12 +11,13 @@
 
 <%conexion.ConexionJDBC con = new conexion.ConexionJDBC();
           Connection  cn = con.conectar();
-            String sql1="select * from public.\"Cliente\" ORDER BY id_campo;";     
+            String sql="select id_campo, nombre ,apellidos,sexo,edad,dui,nit,fechaingreso,nombremembresia"
+                    + " from public.\"Cliente\" A INNER JOIN membresia B ON A.membresia=B.id_membresia ORDER BY id_campo;";     
             Statement st;
             
                 try {
                    st = cn.createStatement();
-                   ResultSet r=st.executeQuery(sql1); %>
+                   ResultSet r=st.executeQuery(sql); %>
                    <div>                 
 <table id="example" class="table tabler hover link table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
     <thead>
@@ -25,10 +26,11 @@
             <th>Nombre</th>
             <th>Apellido</th>
             <th>Sexo</th>
+            <th>Edad</th>
             <th>DUI</th>
             <th>NIT</th>
             <th>ID_Cliente</th>
-            <th>Fecha Nacimiento</th>
+            <th>Fecha Ingreso</th>
             <th>Membresia</th>
             <th>Ver</th>
             <th>Eliminar</th>             
@@ -41,11 +43,12 @@
             <td class="nombre"><%out.println(r.getString("nombre"));%></td>
             <td class="apellido"><%out.println(r.getString("apellidos"));%></td>
             <td class="sexo"><%out.println(r.getString("sexo"));%></td>
+            <td class="edad"><%out.println(r.getString("edad"));%></td>
             <td class="ndui"><%out.println(r.getString("dui"));%></td>
             <td class="nnit"><%out.println(r.getString("nit"));%></td>
             <td class="codigo"><%out.println(r.getString("id_campo"));%></td>
-            <td class="nacimiento"><%out.println(r.getString("fechanacimiento"));%></td>
-            <td class="membresia"><%out.println(r.getString("membresia"));%></td>
+            <td class="ingreso"><%out.println(r.getString("fechaingreso"));%></td>
+            <td class="membresia"><%out.println(r.getString("nombremembresia"));%></td>
             <td>
                 <a class="center btn btn-default edit">
                     <span class="glyphicon glyphicon-pencil"></span>                  

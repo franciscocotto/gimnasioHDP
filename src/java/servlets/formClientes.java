@@ -19,7 +19,6 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "formClientes", urlPatterns = {"/formClientes"})
 public class formClientes extends HttpServlet {
-
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -36,23 +35,26 @@ public class formClientes extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-          String nombre = request.getParameter("nombre");
+            String nombre = request.getParameter("nombre");
             String apellido = request.getParameter("apellidos");
+            String edad = request.getParameter("edad");
             String dui = request.getParameter("dui");
             String nit = request.getParameter("nit");
             String sexo = request.getParameter("sexo");
-            String nacimiento = request.getParameter("fechanacimiento");
+            String ingreso = request.getParameter("fechaingreso");
             String membresia = request.getParameter("membresia");
+            
             
             modelo.Cliente cliente = new modelo.Cliente();
             
             cliente.setNombre(nombre);
             cliente.setApellido(apellido);
+            cliente.setEdad(Integer.parseInt(edad));
             cliente.setDui(dui);
             cliente.setNit(nit);
             cliente.setSexo(sexo);
-            cliente.setNacimiento(nacimiento);
-            cliente.setMembresia(membresia);
+            cliente.setIngreso(ingreso);
+            cliente.setMembresia(Integer.parseInt(membresia));
             
             modelo.addClientes nuevoCliente = new modelo.addClientes();
             nuevoCliente.agrega(cliente);

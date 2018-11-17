@@ -35,15 +35,17 @@
             var cod = currentTR.find("td.codigo").text();
             var nombre = currentTR.find("td.nombre").text();
             var apellido = currentTR.find("td.apellido").text();
+            var edad = currentTR.find("td.edad").text();
             var sexo = currentTR.find("td.sexo").text();
             var ndui = currentTR.find("td.ndui").text();
             var nnit = currentTR.find("td.nnit").text();
-            var nacimiento = currentTR.find("td.nacimiento").text();
+            var ingreso = currentTR.find("td.ingreso").text();
             var membresia = currentTR.find("td.membresia").text();
            //enviar datos a modal
             $('.addcodigo', myModal).val(cod);
             $('.addnombre', myModal).val(nombre);
             $('.addapellido', myModal).val(apellido);
+            $('.addedad', myModal).val(edad);
            if(sexo==="Hombre\n"){
             $('.addsexo', myModal).prop('selectedIndex',0);
             }
@@ -52,7 +54,7 @@
             }
             $('.adddui', myModal).val(ndui);
             $('.addnnit', myModal).val(nnit);
-            $('.addnacimiento', myModal).val(nacimiento);
+            $('.addingreso', myModal).val(ingreso);
             if(membresia==="Bronce\n"){
             $('.addmembresia', myModal).prop('selectedIndex',0);
             }

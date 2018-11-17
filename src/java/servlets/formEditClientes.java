@@ -21,10 +21,10 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet(name = "formEditClientes", urlPatterns = {"/formEditClientes"})
 public class formEditClientes extends HttpServlet {
-
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+                  
   
     }
 
@@ -44,19 +44,22 @@ public class formEditClientes extends HttpServlet {
             String apellido = request.getParameter("apellidos");
             String dui = request.getParameter("dui");
             String nit = request.getParameter("nit");
+            String edad = request.getParameter("edad");
             String sexo = request.getParameter("sexo");
-            String nacimiento = request.getParameter("fechanacimiento");
+            String ingreso = request.getParameter("fechaingreso");           
             String membresia = request.getParameter("membresia");
+            
             
             modelo.Cliente cliente = new modelo.Cliente();
             cliente.setCodigo(Integer.parseInt(Id));
             cliente.setNombre(nombre);
             cliente.setApellido(apellido);
             cliente.setSexo(sexo);
+            cliente.setEdad(Integer.parseInt(edad));
             cliente.setDui(dui);
             cliente.setNit(nit);
-            cliente.setNacimiento(nacimiento);
-            cliente.setMembresia(membresia);
+            cliente.setIngreso(ingreso);
+            cliente.setMembresia(Integer.parseInt(membresia));
             
             modelo.addClientes editaCliente = new modelo.addClientes();
             editaCliente.edita(cliente);

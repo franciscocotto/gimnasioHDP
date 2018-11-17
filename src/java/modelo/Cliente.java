@@ -13,25 +13,36 @@ public class Cliente {
     Integer codigo;
     String nombre;
     String apellido;
+    Integer edad;
     String dui;
     String nit;
     String sexo;
-    String nacimiento;
-    String membresia;
+    String ingreso;
+    Integer membresia;
 
    public Cliente() {
        
     }
    
-    public Cliente(Integer codigo, String nombre, String apellido, String dui, String nit, String sexo, String nacimiento, String membresia) {
+    public Cliente(Integer codigo, String nombre, String apellido, Integer edad, String dui, String nit, String sexo, String ingreso, Integer membresia) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.apellido = apellido;
+        this.edad = edad;
         this.dui = dui;
         this.nit = nit;
         this.sexo = sexo;
-        this.nacimiento = nacimiento;
+        this.ingreso = ingreso;
         this.membresia = membresia;
+    }
+    
+    
+    public Integer getEdad() {
+        return edad;
+    }
+
+    public void setEdad(Integer edad) {
+        this.edad = edad;
     }
 
     public String getSexo() {
@@ -74,19 +85,19 @@ public class Cliente {
         this.nit = nit;
     }
 
-    public String getNacimiento() {
-        return nacimiento;
+    public String getIngreso() {
+        return ingreso;
     }
 
-    public void setNacimiento(String nacimiento) {
-        this.nacimiento = nacimiento;
+    public void setIngreso(String nacimiento) {
+        this.ingreso = nacimiento;
     }
 
-    public String getMembresia() {
+    public Integer getMembresia() {
         return membresia;
     }
 
-    public void setMembresia(String membresia) {
+    public void setMembresia(Integer membresia) {
         this.membresia = membresia;
     }
     

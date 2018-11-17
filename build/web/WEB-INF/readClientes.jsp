@@ -42,6 +42,12 @@
                             <input class="form-control addapellido" type="text" name="apellidos" placeholder="Ingresar el Apellido del Cliente" required="required" maxlength="60" minlength="3"/>    
                         </div>
                     </div>
+                     <div class="form-group numero">
+                        <label class="col-md-3 control-label"><strong class="colorred">*</strong>Edad:</label>
+                        <div class="col-md-8">
+                            <input class="form-control addedad" type="text" name="edad" placeholder="Ingresar la Edad" required="required" maxlength="3" minlength="1"/>    
+                        </div>
+                    </div>
                     <div class="form-group">
                         <label class="col-md-3 control-label">Sexo</label>
                         <div class="col-md-5">
@@ -67,7 +73,7 @@
                         <label class="col-md-3 control-label" style="margin-right: 15px !important;"><strong class="colorred">*</strong>Fecha de Nacimiento</label>
 
                         <div class="col-md-4 input-group input-append  dateagenowPicker">
-                            <input type='text' class="form-control addnacimiento date" placeholder="DD/MMM/YYYY" readonly="readonly" name="fechanacimiento" required="required" />
+                            <input type='text' class="form-control addingreso date" placeholder="DD/MMM/YYYY" readonly="readonly" name="fechaingreso" required="required" />
                             <span class="input-group-addon add-on">
                                 <span class="glyphicon glyphicon-calendar"></span>
                             </span>
@@ -77,9 +83,9 @@
                         <label class="col-md-3 control-label">Tipo Membresia</label>
                         <div class="col-md-5">
                             <select class="form-control addmembresia" required name="membresia">
-                                <option value="Bronce">Bronce</option>
-                                <option value="Plata">Plata</option>
-                                <option value="Oro">Oro</option>
+                                <option value="1">Bronce</option>
+                                <option value="2">Plata</option>
+                                <option value="3">Oro</option>
                             </select>
                         </div>
                     </div>

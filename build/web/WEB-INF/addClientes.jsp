@@ -3,6 +3,9 @@
     Created on : 12-nov-2018, 23:45:32
     Author     : Angel
 --%>
+
+
+<%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!-- Modal Desvincular -->
 <div class="modal fade resette" id="agregarusuario" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -26,6 +29,12 @@
                         <label class="col-md-3 control-label"><strong class="colorred">*</strong>Apellido:</label>
                         <div class="col-md-8">
                             <input class="form-control" type="text" name="apellidos" placeholder="Ingresar el Apellido del Cliente" required="required" maxlength="60" minlength="3"/>    
+                        </div>
+                    </div>
+                    <div class="form-group numero">
+                        <label class="col-md-3 control-label"><strong class="colorred">*</strong>Edad:</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" name="edad" placeholder="Ingresar la Edad" required="required" maxlength="3" minlength="1"/>    
                         </div>
                     </div>
                      <div class="form-group">
@@ -53,19 +62,25 @@
                         <label class="col-md-3 control-label" style="margin-right: 15px !important;"><strong class="colorred">*</strong>Fecha de Nacimiento</label>
 
                         <div class="col-md-4 input-group input-append  dateagenowPicker">
-                            <input type='text' class="form-control date" placeholder="DD/MMM/YYYY" readonly="readonly" name="fechanacimiento" required="required" />
+                            <input type='text' class="form-control date" placeholder="DD/MMM/YYYY" readonly="readonly" name="fechaingreso" required="required" />
                             <span class="input-group-addon add-on">
                                 <span class="glyphicon glyphicon-calendar"></span>
                             </span>
                         </div>
                     </div>
+                    <jsp:useBean id="con" class="modelo.addClientes" scope="page"></jsp:useBean>
+                     <%
+                         ResultSet rs =con.mostrar();
+                      %>   
                     <div class="form-group">
                         <label class="col-md-3 control-label">Tipo Membresia</label>
                         <div class="col-md-5">
                             <select class="form-control" required name="membresia">
-                                <option>Bronce</option>
-                                <option>Plata</option>
-                                <option>Oro</option>
+                                 <%
+                                     while(rs.next()){
+                                 %>
+                                <option value="<%=rs.getString("id_membresia")%>"><%=rs.getString("nombremembresia")%></option>
+                                 <%}%>
                             </select>
                         </div>
                     </div>
@@ -77,4 +92,4 @@
             </form>
         </div>
     </div>
-</div>
+</div>     
