@@ -42,11 +42,14 @@ public class deleteMembresia extends HttpServlet {
              membresia.setCodigo(Integer.parseInt(Id));
              
             modelo.addMembresias borrarMembresia = new modelo.addMembresias();
+            String myCustomMsg="";
         try {
             borrarMembresia.elimina(membresia);
         } catch (SQLException ex) {
-            Logger.getLogger(deleteMembresia.class.getName()).log(Level.SEVERE, null, ex);
+          response.sendRedirect("error.jsp");
+          return;
         }
+        
            response.sendRedirect("membresias.jsp");
     }
 

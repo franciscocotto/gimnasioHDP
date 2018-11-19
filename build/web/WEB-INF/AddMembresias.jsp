@@ -25,7 +25,7 @@
                             </a>
                         </li> 
                          <li class="active">
-                        <a href="Membresias.jsp"><i class="fa fa-fw fa-cog"></i> Membresias
+                        <a href="membresias.jsp"><i class="fa fa-fw fa-cog"></i> Membresias
                          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="svg-triangle  extended">                    
                                 <polygon style="border-color: white;" points="22,20 -5,40 0,0"></polygon>
                                 </svg>
