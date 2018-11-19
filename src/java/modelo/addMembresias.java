@@ -28,7 +28,12 @@ public class addMembresias {
                 pst.setString(1, membresia.nombre);
                 pst.setString(2, membresia.descripcion);
                 pst.setString(3, membresia.costo);
+                if(membresia.beneficios==null){
+                    pst.setString(4, Arrays.toString(membresia.beneficios).replace("null", "No Hay Beneficios Seleccionados"));
+                }
+                else{
                 pst.setString(4, Arrays.toString(membresia.beneficios).replaceAll("\\[([^\\]]+)\\]", "$1"));
+                }
                 int i = pst.executeUpdate();      
                 if (i != 0) {
                     status = "Guardado";
@@ -54,7 +59,12 @@ public class addMembresias {
                 pst.setString(1, membresia.nombre);
                 pst.setString(2, membresia.descripcion);
                 pst.setString(3, membresia.costo);
-                pst.setString(4, Arrays.toString(membresia.beneficios).replaceAll("\\[([^\\]]+)\\]", "$1"));            
+                if(membresia.beneficios==null){
+                    pst.setString(4, Arrays.toString(membresia.beneficios).replace("null", "No Hay Beneficios Seleccionados"));
+                }
+                else{
+                pst.setString(4, Arrays.toString(membresia.beneficios).replaceAll("\\[([^\\]]+)\\]", "$1"));
+                }      
                 int i = pst.executeUpdate();
                  if (i != 0) {
                     status = "Editado";

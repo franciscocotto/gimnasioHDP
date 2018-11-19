@@ -5,7 +5,7 @@
 -- Dumped from database version 10.6
 -- Dumped by pg_dump version 10.6
 
--- Started on 2018-11-17 16:00:25
+-- Started on 2018-11-19 10:55:40
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -39,7 +39,7 @@ SET default_tablespace = '';
 SET default_with_oids = false;
 
 --
--- TOC entry 199 (class 1259 OID 16494)
+-- TOC entry 199 (class 1259 OID 16567)
 -- Name: Cliente; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -59,7 +59,7 @@ CREATE TABLE public."Cliente" (
 ALTER TABLE public."Cliente" OWNER TO postgres;
 
 --
--- TOC entry 198 (class 1259 OID 16492)
+-- TOC entry 198 (class 1259 OID 16565)
 -- Name: Cliente_id_campo_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
@@ -84,7 +84,7 @@ ALTER SEQUENCE public."Cliente_id_campo_seq" OWNED BY public."Cliente".id_campo;
 
 
 --
--- TOC entry 197 (class 1259 OID 16460)
+-- TOC entry 197 (class 1259 OID 16556)
 -- Name: membresia; Type: TABLE; Schema: public; Owner: postgres
 --
 
@@ -100,11 +100,11 @@ CREATE TABLE public.membresia (
 ALTER TABLE public.membresia OWNER TO postgres;
 
 --
--- TOC entry 196 (class 1259 OID 16458)
--- Name: membresias_id_membresia_seq; Type: SEQUENCE; Schema: public; Owner: postgres
+-- TOC entry 196 (class 1259 OID 16554)
+-- Name: membresia_id_membresia_seq; Type: SEQUENCE; Schema: public; Owner: postgres
 --
 
-CREATE SEQUENCE public.membresias_id_membresia_seq
+CREATE SEQUENCE public.membresia_id_membresia_seq
     AS integer
     START WITH 1
     INCREMENT BY 1
@@ -113,19 +113,19 @@ CREATE SEQUENCE public.membresias_id_membresia_seq
     CACHE 1;
 
 
-ALTER TABLE public.membresias_id_membresia_seq OWNER TO postgres;
+ALTER TABLE public.membresia_id_membresia_seq OWNER TO postgres;
 
 --
 -- TOC entry 2819 (class 0 OID 0)
 -- Dependencies: 196
--- Name: membresias_id_membresia_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
+-- Name: membresia_id_membresia_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: postgres
 --
 
-ALTER SEQUENCE public.membresias_id_membresia_seq OWNED BY public.membresia.id_membresia;
+ALTER SEQUENCE public.membresia_id_membresia_seq OWNED BY public.membresia.id_membresia;
 
 
 --
--- TOC entry 2678 (class 2604 OID 16497)
+-- TOC entry 2678 (class 2604 OID 16570)
 -- Name: Cliente id_campo; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
@@ -133,33 +133,30 @@ ALTER TABLE ONLY public."Cliente" ALTER COLUMN id_campo SET DEFAULT nextval('pub
 
 
 --
--- TOC entry 2677 (class 2604 OID 16463)
+-- TOC entry 2677 (class 2604 OID 16559)
 -- Name: membresia id_membresia; Type: DEFAULT; Schema: public; Owner: postgres
 --
 
-ALTER TABLE ONLY public.membresia ALTER COLUMN id_membresia SET DEFAULT nextval('public.membresias_id_membresia_seq'::regclass);
+ALTER TABLE ONLY public.membresia ALTER COLUMN id_membresia SET DEFAULT nextval('public.membresia_id_membresia_seq'::regclass);
 
 
 --
--- TOC entry 2809 (class 0 OID 16494)
+-- TOC entry 2809 (class 0 OID 16567)
 -- Dependencies: 199
 -- Data for Name: Cliente; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public."Cliente" (id_campo, nombre, apellidos, sexo, edad, dui, nit, fechaingreso, membresia) FROM stdin;
-1	Angel	Cotto	Hombre	45	04024571-3	0608-021288-102-9	16/Nov/2018	11
-2	Angel	Asencio	Hombre	29	04024571-3	0608-021551-111-1	06/Nov/2018	11
 \.
 
 
 --
--- TOC entry 2807 (class 0 OID 16460)
+-- TOC entry 2807 (class 0 OID 16556)
 -- Dependencies: 197
 -- Data for Name: membresia; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
 COPY public.membresia (id_membresia, nombremembresia, descripcion, costo, beneficios) FROM stdin;
-11	Bronce	Ejemplo\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n	45.45	Baile
 \.
 
 
@@ -169,20 +166,20 @@ COPY public.membresia (id_membresia, nombremembresia, descripcion, costo, benefi
 -- Name: Cliente_id_campo_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public."Cliente_id_campo_seq"', 2, true);
+SELECT pg_catalog.setval('public."Cliente_id_campo_seq"', 1, false);
 
 
 --
 -- TOC entry 2821 (class 0 OID 0)
 -- Dependencies: 196
--- Name: membresias_id_membresia_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
+-- Name: membresia_id_membresia_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.membresias_id_membresia_seq', 11, true);
+SELECT pg_catalog.setval('public.membresia_id_membresia_seq', 1, false);
 
 
 --
--- TOC entry 2682 (class 2606 OID 16499)
+-- TOC entry 2682 (class 2606 OID 16572)
 -- Name: Cliente Cliente_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -191,16 +188,16 @@ ALTER TABLE ONLY public."Cliente"
 
 
 --
--- TOC entry 2680 (class 2606 OID 16468)
--- Name: membresia membresias_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
+-- TOC entry 2680 (class 2606 OID 16564)
+-- Name: membresia membresia_pkey; Type: CONSTRAINT; Schema: public; Owner: postgres
 --
 
 ALTER TABLE ONLY public.membresia
-    ADD CONSTRAINT membresias_pkey PRIMARY KEY (id_membresia);
+    ADD CONSTRAINT membresia_pkey PRIMARY KEY (id_membresia);
 
 
 --
--- TOC entry 2683 (class 1259 OID 16505)
+-- TOC entry 2683 (class 1259 OID 16578)
 -- Name: fki_fk_id_membresia; Type: INDEX; Schema: public; Owner: postgres
 --
 
@@ -208,7 +205,7 @@ CREATE INDEX fki_fk_id_membresia ON public."Cliente" USING btree (membresia);
 
 
 --
--- TOC entry 2684 (class 2606 OID 16500)
+-- TOC entry 2684 (class 2606 OID 16573)
 -- Name: Cliente fk_id_membresia; Type: FK CONSTRAINT; Schema: public; Owner: postgres
 --
 
@@ -216,7 +213,7 @@ ALTER TABLE ONLY public."Cliente"
     ADD CONSTRAINT fk_id_membresia FOREIGN KEY (membresia) REFERENCES public.membresia(id_membresia);
 
 
--- Completed on 2018-11-17 16:00:25
+-- Completed on 2018-11-19 10:55:40
 
 --
 -- PostgreSQL database dump complete

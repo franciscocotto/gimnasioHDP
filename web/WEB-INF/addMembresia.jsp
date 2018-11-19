@@ -42,10 +42,7 @@
                         <div class="col-md-8">
                        <div class="checkbox">
                             <label><input class="c0" type="checkbox" id="select-all" name="beneficio">Seleccionar Todos</label>
-                        </div>
-                        <div class="checkbox">
-                            <label><input class="c0" type="checkbox" id="select_all" name="beneficio">Seleccionar Todos</label>
-                        </div>
+                        </div>                     
                         <div class="checkbox">
                             <label><input type="checkbox" name="beneficio" value="Baile">Baile</label>
                         </div>
@@ -53,7 +50,7 @@
                             <label><input type="checkbox" name="beneficio" value="Yoga">Yoga</label>
                         </div>
                         <div class="checkbox">
-                            <label><input type="checkbox" name="beneficio" value="spinning">Spinning</label>
+                            <label><input type="checkbox" name="beneficio" value="Spinning">Spinning</label>
                         </div>
                         <div class="checkbox">
                             <label><input type="checkbox" name="beneficio" value="Tae Bo">Tae Bo</label>

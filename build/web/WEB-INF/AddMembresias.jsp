@@ -17,16 +17,6 @@
                         <img src="images/logo.png">
                     </a>
                 </div>
-                <ul class="nav navbar-right top-nav">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i>&nbsp;Angel Cotto <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="login.html"><i class="fa fa-fw fa-power-off"></i>Cerrar Sesi&oacute;n</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav side-nav">
                         <li>
@@ -49,7 +39,7 @@
                     <div class="row">
                         <div class="col-lg-9">
                             <h1 class="page-header" style="margin-top:0;">
-                                <i class="fa pg fa-fw fa-bell"></i> Administraci&oacute;n de Membresias
+                                <i class="fa pg fa-fw fa-cog"></i> Administraci&oacute;n de Membresias
                             </h1>
                         </div>
 

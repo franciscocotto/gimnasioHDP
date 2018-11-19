@@ -5,7 +5,7 @@
     datemonthpicker();
     datenowyearpicker();
     numerodecimal();
-   // datatable();
+    select();
     tooltip();
     letras();
     fechas();
@@ -76,6 +76,22 @@ var dateyearpicker = function () {
     });
 };
 
+
+var select = function () {
+        $('#select-all').click(function(event) {   
+            if(this.checked) {
+                // Iterate each checkbox
+                $(':checkbox').each(function() {
+                    this.checked = true;                        
+                });
+            } else {
+                $(':checkbox').each(function() {
+                    this.checked = false;                       
+                });
+            }
+        });
+};
+
 var datemonthpicker = function () {
     $('.datemonthPicker').each(function () {      
         $(this).datetimepicker({
@@ -85,6 +101,7 @@ var datemonthpicker = function () {
         });
         });
 };
+
 
 var datenowyearpicker = function () {
     $('.datenowyearpicker').each(function () {

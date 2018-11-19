@@ -53,34 +53,34 @@
                         <label class="col-md-3 control-label">Beneficios:</label>
                         <div class="col-md-8">
                         <div class="checkbox">
-                            <label><input class="check" type="checkbox" id="select-all" name="beneficio">Seleccionar Todos</label>
+                             <label><input class="c0" type="checkbox" id="select-all" name="beneficio">Seleccionar Todos</label>
                         </div>
                         <div class="checkbox">
-                            <label><input class="check" type="checkbox" name="beneficio" value="Baile">Baile</label>
+                            <label><input class="check c1" type="checkbox" name="beneficio" value="Baile">Baile</label>
                         </div>
                         <div class="checkbox">
-                            <label><input class="check" type="checkbox" name="beneficio" value="Yoga">Yoga</label>
+                            <label><input class="check c2" type="checkbox" name="beneficio" value="Yoga">Yoga</label>
                         </div>
                         <div class="checkbox">
-                            <label><input class="check" type="checkbox" name="beneficio" value="spinning">Spinning</label>
+                            <label><input class="check c3" type="checkbox" name="beneficio" value="Spinning">Spinning</label>
                         </div>
                         <div class="checkbox">
-                            <label><input class="check" type="checkbox" name="beneficio" value="Tae Bo">Tae Bo</label>
+                            <label><input class="check c4" type="checkbox" name="beneficio" value="Tae Bo">Tae Bo</label>
                         </div>
                         <div class="checkbox">
-                            <label><input  class="check" type="checkbox" name="beneficio" value="Uso Ilimitado de Gimnasio">Uso Ilimitado de Gimnasio</label>
+                            <label><input  class="check c5" type="checkbox" name="beneficio" value="Uso Ilimitado de Gimnasio">Uso Ilimitado de Gimnasio</label>
                         </div> 
                             <div class="checkbox">
-                            <label><input class="check"  type="checkbox" name="beneficio" value="Entrenamiento Funcional">Entrenamiento Funcional</label>
+                            <label><input class="check c6"  type="checkbox" name="beneficio" value="Entrenamiento Funcional">Entrenamiento Funcional</label>
                         </div>
                        <div class="checkbox">
-                            <label><input class="check"type="checkbox" name="beneficio" value="Parqueo Gratis">Parqueo Gratis</label>
+                            <label><input class="check c7"type="checkbox" name="beneficio" value="Parqueo Gratis">Parqueo Gratis</label>
                         </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                    <button type="button" id="btnCerrar" class="btn btn-default" data-dismiss="modal">Cerrar</button>
                     <button type="submit" id="agregar-submit" class="btn btn-success">Agregar</button>
                 </div>
             </form>

@@ -41,7 +41,7 @@
             <td class="costo">$<%out.println(r.getString("costo"));%></td>
             <td class="beneficios"><%out.println(r.getString("beneficios"));%></td>
             <td>
-                <a class="center btn btn-default edit">
+                <a class="center btn btn-default edit" >
                     <span class="glyphicon glyphicon-pencil"></span>                  
                 </a>
             </td>

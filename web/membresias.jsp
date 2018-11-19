@@ -26,34 +26,57 @@
        <jsp:include page="WEB-INF/AddMembresias.jsp" />
         
         <script src="js/scripts.js"></script>
-        <script>     
-            $('a.edit').on('click', function() {
+        <script>    
+//    $(document).ready(function()
+//         {     
+          $('a.edit').on("click",function(){
             var myModal = $('#readmembresia');
              //capturar datos desde tabla
+           // $(":checkbox").prop("checked","true");
             var currentTR = $(this).closest('tr');
             var nombre = currentTR.find("td.nombre").text();
             var cod = currentTR.find("td.codigo").text();
             var descripcion = currentTR.find("td.descripcion").text();
             var costo = currentTR.find("td.costo").text().replace("$", "");
             var get=currentTR.find("td.beneficios").text().replace("\n", "");
-            var beneficios = get.split(",");  
-            var names = [beneficios];
-//              $.each(names, function(index, beneficio){
-//                         $(":checkbox[value='"+beneficio+"']").prop("checked","true");
-//                    }); 
-            $.each(beneficios, function( index, beneficios ) {
-                 $(":checkbox[value='"+beneficios+"']").prop("checked","true");
+            var beneficios = get.split(",");
+            $.each(beneficios, function( membresia, beneficio ) {                            
+                 $(":checkbox[value='"+$.trim(beneficio)+"']").prop("checked","true");
             });
            //enviar datos a modal
             $('.addcodigo', myModal).val(cod);
             $('.addnombre', myModal).val(nombre);
             $('.adddescripcion', myModal).val(descripcion);
             $('.addcosto', myModal).val(costo);
-
-            myModal.modal({ show: true });
+             myModal.modal({ show: true });
+                
               return false;
             });
+          
+           $("#readmembresia").on('hidden.bs.modal', function () {
+                   $('input[type="checkbox"]').prop("checked", false);
+                   location.reload();
+            });
+     
+           $("#agregarmembresia").on('hidden.bs.modal', function () {
+                   $('input[type="checkbox"]').prop("checked", false);
+            });
             
+            $("#readmembresia" ).on('show.bs.modal', function(){
+                $('.c1').val("Baile");
+                $('.c2').val("Yoga");
+                $('.c3').val("Spinning");
+                $('.c4').val("Tae Bo");
+                $('.c5').val("Uso Ilimitado de Gimnasio");
+                $('.c6').val("Entrenamiento Funcional");
+                $('.c7').val("Parqueo Gratis");
+                $('.c8').val("Yoga");
+                select();
+            });
+
+
+
+           
           $('a.delete').on('click', function() {
             var myModal = $('#confirmDelete');
              //capturar datos desde tabla
@@ -72,19 +95,7 @@
             $('#money').maskMoney();
         })
 
-$('#select-all').click(function(event) {   
-    if(this.checked) {
-        // Iterate each checkbox
-        $(':checkbox').each(function() {
-            this.checked = true;                        
-        });
-    } else {
-        $(':checkbox').each(function() {
-            this.checked = false;                       
-        });
-    }
-});
-            
+//     });         
         </script>
     </body>
 </html>
