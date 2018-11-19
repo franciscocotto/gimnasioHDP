@@ -38,12 +38,12 @@
             var get=currentTR.find("td.beneficios").text().replace("\n", "");
             var beneficios = get.split(",");  
             var names = [beneficios];
-              $.each(names, function(index, beneficio){
-                         $(":checkbox[value='"+beneficio+"']").prop("checked","true");
-                    }); 
-//            $.each(beneficios, function( index, beneficios ) {
-//                 $(":checkbox[value='"+beneficios+"']").prop("checked","true");
-//            });
+//              $.each(names, function(index, beneficio){
+//                         $(":checkbox[value='"+beneficio+"']").prop("checked","true");
+//                    }); 
+            $.each(beneficios, function( index, beneficios ) {
+                 $(":checkbox[value='"+beneficios+"']").prop("checked","true");
+            });
            //enviar datos a modal
             $('.addcodigo', myModal).val(cod);
             $('.addnombre', myModal).val(nombre);
