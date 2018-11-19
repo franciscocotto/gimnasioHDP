@@ -40,6 +40,9 @@
                      <div class="form-group">
                         <label class="col-md-3 control-label">Beneficios:</label>
                         <div class="col-md-8">
+                       <div class="checkbox">
+                            <label><input class="c0" type="checkbox" id="select-all" name="beneficio">Seleccionar Todos</label>
+                        </div>
                         <div class="checkbox">
                             <label><input class="c0" type="checkbox" id="select_all" name="beneficio">Seleccionar Todos</label>
                         </div>
@@ -66,12 +69,7 @@
                         </div>
                         </div>
                     </div>
-                      <script>
-                        $('#select_all').change(function() {
-                      var checkboxes = $(this).closest('form').find(':checkbox');
-                      checkboxes.prop('checked', $(this).is(':checked'));
-                            });
-                    </script>
+                     
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>

@@ -26,8 +26,7 @@
        <jsp:include page="WEB-INF/AddMembresias.jsp" />
         
         <script src="js/scripts.js"></script>
-        <script>
-           
+        <script>     
             $('a.edit').on('click', function() {
             var myModal = $('#readmembresia');
              //capturar datos desde tabla
@@ -35,43 +34,26 @@
             var nombre = currentTR.find("td.nombre").text();
             var cod = currentTR.find("td.codigo").text();
             var descripcion = currentTR.find("td.descripcion").text();
-            var costo = currentTR.find("td.costo").text().replace("$", "");;
-            var beneficios = currentTR.find("td.beneficios").text().split(",");  
-            var array = [beneficios];
-               for(j=0;j<beneficios.length;j++){
-                     array[j].prop("checked", true);               
-                }
-
+            var costo = currentTR.find("td.costo").text().replace("$", "");
+            var get=currentTR.find("td.beneficios").text().replace("\n", "");
+            var beneficios = get.split(",");  
+            var names = [beneficios];
+              $.each(names, function(index, beneficio){
+                         $(":checkbox[value='"+beneficio+"']").prop("checked","true");
+                    }); 
+//            $.each(beneficios, function( index, beneficios ) {
+//                 $(":checkbox[value='"+beneficios+"']").prop("checked","true");
+//            });
            //enviar datos a modal
             $('.addcodigo', myModal).val(cod);
             $('.addnombre', myModal).val(nombre);
             $('.adddescripcion', myModal).val(descripcion);
             $('.addcosto', myModal).val(costo);
 
-
-
-
-
-
-
-
-
-
-
-           $(".c1", myModal).attr("checked", true);
-           $(".c2", myModal).attr("checked", true);
-           $(".c3", myModal).attr("checked", true);
-           $(".c4", myModal).attr("checked", true);
-           $(".c5", myModal).attr("checked", true);
-           $(".c6", myModal).attr("checked", true);
-           $(".c7", myModal).attr("checked", true);
-
-           
             myModal.modal({ show: true });
               return false;
             });
-
-
+            
           $('a.delete').on('click', function() {
             var myModal = $('#confirmDelete');
              //capturar datos desde tabla
@@ -85,10 +67,23 @@
             });
             
 
+
         $(function() {
             $('#money').maskMoney();
         })
 
+$('#select-all').click(function(event) {   
+    if(this.checked) {
+        // Iterate each checkbox
+        $(':checkbox').each(function() {
+            this.checked = true;                        
+        });
+    } else {
+        $(':checkbox').each(function() {
+            this.checked = false;                       
+        });
+    }
+});
             
         </script>
     </body>
