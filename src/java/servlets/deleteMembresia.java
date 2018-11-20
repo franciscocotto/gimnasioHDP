@@ -37,20 +37,23 @@ public class deleteMembresia extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        //capturo datos del formulario de alerta para eliminar solo tomamos el codigo pues con 
+        //eso de hace la consulta
              String Id = request.getParameter("codigo");
+             //creando constructor
              modelo.Membresias membresia = new modelo.Membresias();
-             membresia.setCodigo(Integer.parseInt(Id));
-             
+             membresia.setCodigo(Integer.parseInt(Id));//se cambia el tipo de variable por int desde string
+              //objeto para borrar cliente
             modelo.addMembresias borrarMembresia = new modelo.addMembresias();
             String myCustomMsg="";
         try {
-            borrarMembresia.elimina(membresia);
-        } catch (SQLException ex) {
-          response.sendRedirect("error.jsp");
+            borrarMembresia.elimina(membresia);//envia objeto a addMembresias.
+        } catch (SQLException ex) {//captura error de existir
+          response.sendRedirect("error.jsp");//se redirecciona al jsp de error.
           return;
         }
         
-           response.sendRedirect("membresias.jsp");
+           response.sendRedirect("membresias.jsp");//se redirecciona al membresias.jsp una vez terminado el eliminado de registros
     }
 
     @Override

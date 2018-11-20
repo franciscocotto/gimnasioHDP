@@ -33,23 +33,23 @@ public class formMembresia extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+//        capturando valores del form
             String nombre = request.getParameter("nombre");
             String descripcion = request.getParameter("descripcion");
             String costo = request.getParameter("costo");
             String beneficios [] = request.getParameterValues("beneficio");
-            
+//            creando objeto del costructor
             modelo.Membresias membresia = new modelo.Membresias();
-            
+//            almacenando datos en las variables con el constructor
             membresia.setNombre(nombre);
             membresia.setDescripcion(descripcion);
             membresia.setCosto(costo);
             membresia.setBeneficios(beneficios);
             
-            
+//            creando objeto para guardar membresia
             modelo.addMembresias nuevaMembresia = new modelo.addMembresias();
             nuevaMembresia.agrega(membresia);
-           // RequestDispatcher dispatch = request.getRequestDispatcher("index.jsp");
-            //dispatch.forward(request, response);
+//            si se guarda exitosamente se redirecciona a membresia
             response.sendRedirect("membresias.jsp");
             
     }

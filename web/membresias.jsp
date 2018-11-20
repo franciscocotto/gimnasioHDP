@@ -12,22 +12,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Gimnasio</title>
+        <title>Membresia</title>
         <!-- Bootstrap Core CSS -->
         <link href="css/sb-admin.css" rel="stylesheet">
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
     </head> 
     <body>
+        <!--include que muestra los datos de las membresias-->
        <jsp:include page="WEB-INF/AddMembresias.jsp" />
+        <!--llama todos los script-->
         <script src="js/scripts.js"></script>
-        <script>    
- 
-          $('a.edit').on("click",function(){
+        <script>   
+//            script para edita datos de tabla en modal
+       $( "a.edit" ).each(function(index) { 
+           $(this).on("click", function(){
             var myModal = $('#readmembresia');
             var currentTR = $(this).closest('tr');
             var nombre = currentTR.find("td.nombre").text();
@@ -48,16 +45,18 @@
                 
               return false;
             });
+         });
           
+          //eliminando checkbox en modal al cerrar
            $("#readmembresia").on('hidden.bs.modal', function () {
                    $('input[type="checkbox"]').prop("checked", false);
                    location.reload();
             });
-     
+        //eliminando checkbox en modal al cerrar
            $("#agregarmembresia").on('hidden.bs.modal', function () {
                    $('input[type="checkbox"]').prop("checked", false);
             });
-            
+           //asignado values  checkbox en modal al abrir 
             $("#readmembresia" ).on('show.bs.modal', function(){
                 $('.c1').val("Baile");
                 $('.c2').val("Yoga");
@@ -69,7 +68,7 @@
                 $('.c8').val("Yoga");
                 select();
             });
-        
+        //eliminando registros
           $('a.delete').on('click', function() {
             var myModal = $('#confirmDelete');
              //capturar datos desde tabla
@@ -82,11 +81,11 @@
               return false;
             });
             
-
+            //mascara para dinero
         $(function() {
             $('#money').maskMoney();
         });
-        
+       //script para selecionar all checkbox 
       $('.check-all').checkAll();
 
          

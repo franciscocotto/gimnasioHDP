@@ -1,6 +1,6 @@
 
 package modelo;
-
+//constructor por defecto
 public class Membresias {
     Integer codigo;
     String nombre;
@@ -10,7 +10,7 @@ public class Membresias {
 
     public Membresias() {
     }
-
+//   constructor 
     public Membresias(Integer codigo, String nombre, String descripcion, String costo, String[] beneficios) {
         this.codigo = codigo;
         this.nombre = nombre;
@@ -20,7 +20,7 @@ public class Membresias {
     }
 
 
-
+// seter a n geter   
     public Integer getCodigo() {
         return codigo;
     }

@@ -37,17 +37,20 @@ public class deleteCliente extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        //capturo datos del formulario de alerta para eliminar solo tomamos el codigo pues con 
+        //eso de hace la consulta
            String Id = request.getParameter("codigo");
+           //creando constructor
              modelo.Cliente cliente = new modelo.Cliente();
-             cliente.setCodigo(Integer.parseInt(Id));
-             
+             cliente.setCodigo(Integer.parseInt(Id));//se cambia el tipo de variable por int desde string
+             //objeto para borrar cliente
             modelo.addClientes borrarCliente = new modelo.addClientes();
         try {
-            borrarCliente.elimina(cliente);
-        } catch (SQLException ex) {
+            borrarCliente.elimina(cliente);//envia objeto a addClientes.
+        } catch (SQLException ex) {//captura error de existir
             Logger.getLogger(deleteCliente.class.getName()).log(Level.SEVERE, null, ex);
         }
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("index.jsp");//se redirecciona al index una vez terminado el eliminado de registros
     }
 
     /**

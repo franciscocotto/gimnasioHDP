@@ -5,6 +5,7 @@
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
         <div id="wrapper">
+            <!--menu estilo responsivo-->
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -33,6 +34,7 @@
                     </ul>
                 </div>
             </nav>
+            <!--contenedor del sitio clientes-->
             <div id="page-wrapper">
                 <div class="container-fluid">
                     <div class="row">
@@ -54,16 +56,18 @@
 
                             <div class="row gray-row">
                                 <article class="center2" >
+                                    <!--jsp donde se muestra la tabla de clientes-->
                                      <jsp:include page="tableClientes.jsp" /> 
                                 </article>
                             </div>
                         </div>
                     </div>
+                 <!--pie de pagina-->
                     <jsp:include page="footer.jsp" />
                 </div>
             </div>
         </div>
-<!-- Modals -->
+<!-- alertas y ventanas emergentes -->
  <jsp:include page="alert.jsp" />
  <jsp:include page="addClientes.jsp" />
  <jsp:include page="readClientes.jsp" />

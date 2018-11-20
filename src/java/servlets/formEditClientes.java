@@ -38,7 +38,7 @@ public class formEditClientes extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+//        capturando valores del form
             String Id = request.getParameter("codigo");
             String nombre = request.getParameter("nombre");
             String apellido = request.getParameter("apellidos");
@@ -49,7 +49,7 @@ public class formEditClientes extends HttpServlet {
             String ingreso = request.getParameter("fechaingreso");           
             String membresia = request.getParameter("membresia");
             
-            
+   //            creando objeto del costructor          
             modelo.Cliente cliente = new modelo.Cliente();
             cliente.setCodigo(Integer.parseInt(Id));
             cliente.setNombre(nombre);
@@ -59,13 +59,14 @@ public class formEditClientes extends HttpServlet {
             cliente.setDui(dui);
             cliente.setNit(nit);
             cliente.setIngreso(ingreso);
-            cliente.setMembresia(Integer.parseInt(membresia));
-            
+            cliente.setMembresia(Integer.parseInt(membresia));//cambio de tipo de variable
+          //almacenando datos en las variables con el constructor   
             modelo.addClientes editaCliente = new modelo.addClientes();
             editaCliente.edita(cliente);
+            //coneccion a la base de datos
             ConexionJDBC con = new ConexionJDBC();
             Connection  cn = con.conectar();  
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("index.jsp");//si se edita exitosamente se redirecciona a index
     }
     }
 

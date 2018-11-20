@@ -18,9 +18,11 @@
    
     </head> 
     <body>
+        <!--include que muestra los datos de los clientes-->
        <jsp:include page="WEB-INF/Clientes.jsp" />
-        
+<!--       llama todos los script-->        
         <script src="js/scripts.js"></script>
+<!--       scripts que permiten obtener datos del cliente en la ventana emergente-->
         <script>
           $( "a.edit" ).each(function(index) { 
                 $(this).on("click", function(){
@@ -56,8 +58,8 @@
               return false;
             });
           });
-
-
+          
+          //script que permite eliminar registros
           $('a.delete').on('click', function() {
             var myModal = $('#confirmDelete');
              //capturar datos desde tabla

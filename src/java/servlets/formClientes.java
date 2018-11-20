@@ -35,6 +35,7 @@ public class formClientes extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        //capturando valores del form
             String nombre = request.getParameter("nombre");
             String apellido = request.getParameter("apellidos");
             String edad = request.getParameter("edad");
@@ -44,9 +45,9 @@ public class formClientes extends HttpServlet {
             String ingreso = request.getParameter("fechaingreso");
             String membresia = request.getParameter("membresia");
             
-            
+         //creando objeto del costructor
             modelo.Cliente cliente = new modelo.Cliente();
-            
+         //almacenando datos en las variables con el constructor   
             cliente.setNombre(nombre);
             cliente.setApellido(apellido);
             cliente.setEdad(Integer.parseInt(edad));
@@ -55,12 +56,10 @@ public class formClientes extends HttpServlet {
             cliente.setSexo(sexo);
             cliente.setIngreso(ingreso);
             cliente.setMembresia(Integer.parseInt(membresia));
-            
+            //creando objeto para guardar cliente
             modelo.addClientes nuevoCliente = new modelo.addClientes();
             nuevoCliente.agrega(cliente);
-           // RequestDispatcher dispatch = request.getRequestDispatcher("index.jsp");
-            //dispatch.forward(request, response);
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("index.jsp");//si se guarda exitosamente se redirecciona a membresia
     }
 
 

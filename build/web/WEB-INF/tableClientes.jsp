@@ -8,16 +8,16 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<!--preparando conexion a base de datos en jsp-->
 <%conexion.ConexionJDBC con = new conexion.ConexionJDBC();
-          Connection  cn = con.conectar();
+          Connection  cn = con.conectar();//se conecto a la base de datos
             String sql="select id_campo, nombre ,apellidos,sexo,edad,dui,nit,fechaingreso,id_membresia,nombremembresia"
                     + " from public.\"Cliente\" A INNER JOIN membresia B ON A.membresia=B.id_membresia ORDER BY id_campo;";     
-            Statement st;
+            Statement st;//preparando envio de consulta select
             
                 try {
                    st = cn.createStatement();
-                   ResultSet r=st.executeQuery(sql); %>
+                   ResultSet r=st.executeQuery(sql); //resultset%>
                    <div>                 
 <table id="example" class="table tabler hover link table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
     <thead>
@@ -38,6 +38,7 @@
         </tr>
     </thead>
     <tbody>
+        <!--llenando datos de tabla desde base de datos-->
           <%while(r.next()){%> 
         <tr>
             <td></td>
@@ -52,11 +53,13 @@
             <td class="idmembresia"><center><%out.println(r.getString("id_membresia"));%></center></td>
             <td class="membresia"><center><%out.println(r.getString("nombremembresia"));%></center></td>
             <td>
+                <!--para edita-->
                 <a class="center btn btn-default edit">
                     <span class="glyphicon glyphicon-pencil"></span>                  
                 </a>
             </td>
             <td>
+                <!--para eliminar-->
                 <a class="center btn btn-default delete">
                    <span class="glyphicon glyphicon-trash"> </span>                 
                 </a>
@@ -66,6 +69,6 @@
          <%}%>
     </tbody>
 </table>
-     <% } catch (SQLException ex) {
+     <% } catch (SQLException ex) {//captura error de existir alguno.
                     System.out.println("error: "+ex );
      }%>     

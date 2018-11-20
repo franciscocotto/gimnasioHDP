@@ -14,12 +14,15 @@ import java.sql.SQLException;
 
 
 public class addClientes {
-  
+       //metodo para agregar registros en la base de datos  
        public void agrega(Cliente cliente){
+           //conexion a la base de datos
             ConexionJDBC con = new ConexionJDBC();    
             con.conectar();
+            //INSERT SQL
             String sql = "INSERT INTO public.\"Cliente\" (nombre,apellidos,dui,nit,sexo,edad,fechaingreso,membresia)"+"VALUES(?,?,?,?,?,?,?,?)";
             String status = "";
+           //PREPARANDO SCRIPT PARA SUBIDA
             try(PreparedStatement pst = con.getConexion().prepareStatement(sql)){
                 pst.setString(1, cliente.nombre);
                 pst.setString(2, cliente.apellido);
@@ -30,6 +33,7 @@ public class addClientes {
                 pst.setString(7, cliente.ingreso);
                 pst.setInt(8, cliente.membresia);
                 int i = pst.executeUpdate();
+                // ENVIA MENSAJE DEPENDIENDO SI DE GUARDO O NO
                 if (i != 0) {
                     status = "Guardado";
                 } else {
@@ -37,16 +41,18 @@ public class addClientes {
                  }
                 con.conectar().close();
  
-            } catch (SQLException ex) {
+            } catch (SQLException ex) {//captura excepciones del codigo si hubo error
                 ex.printStackTrace();         
         }
             
             
        }
-       
+       //metodo para editar  registros en la base de datos
          public void edita(Cliente cliente){
+            //conexion a la base de datos
             ConexionJDBC con = new ConexionJDBC();    
             con.conectar();
+            //UPDATE SQL
             String sql = "UPDATE public.\"Cliente\"\n" +
             "SET  nombre=?, apellidos=?, dui=?, nit=?, sexo=?, edad=?, fechaingreso=?, membresia=?\n" +
             "WHERE  id_campo="+cliente.codigo+";";
@@ -61,6 +67,7 @@ public class addClientes {
                 pst.setString(7, cliente.ingreso);
                 pst.setInt(8, cliente.membresia);
                 int i = pst.executeUpdate();
+                 // ENVIA MENSAJE DEPENDIENDO SI DE EDITO O NO
                  if (i != 0) {
                     status = "Editado";
                 } else {
@@ -68,28 +75,33 @@ public class addClientes {
                  }
                 con.conectar().close();
  
-            } catch (SQLException ex) {
+            } catch (SQLException ex) {//captura excepciones del codigo si hubo error
                 ex.printStackTrace();         
         }
             
             
             
        }
-      
+      // metodo para eliminar  registros en la base de datos 
        public void elimina(Cliente cliente) throws SQLException{
+           //conexion a base de datos 
             ConexionJDBC con = new ConexionJDBC();    
             con.conectar();
+            //prepara subida de delete 
             Statement stmt =  con.conectar().createStatement();
             stmt.execute( "DELETE FROM public.\"Cliente\"\n" +
            "WHERE  id_campo="+cliente.codigo+";");             
             
        }
-          
+     // metodo para mostrar  registros en combobox de agregar clientes      
       public ResultSet mostrar() throws SQLException{
+          //conexion a base de datos
            ConexionJDBC con = new ConexionJDBC();    
             con.conectar();
+            //script de consulta 
              String combo="SELECT id_membresia,nombremembresia"
                     + " from public.membresia ORDER BY id_membresia;";   
+              //prepara subida de delete 
               Statement st = con.conectar().createStatement();
                    ResultSet r=st.executeQuery(combo);       
                 return r;  

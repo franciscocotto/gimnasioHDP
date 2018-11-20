@@ -19,6 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Angel
  */
+
+//metodo para crear la ruta de membresias
 @WebServlet(name="linkjsp" , urlPatterns = {"/linkjsp"})
 public class membresias extends HttpServlet {
     protected void doGet(HttpServletRequest request,

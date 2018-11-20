@@ -19,11 +19,11 @@ public class Cliente {
     String sexo;
     String ingreso;
     Integer membresia;
-
+//constructor por defecto
    public Cliente() {
        
     }
-   
+//   constructor 
     public Cliente(Integer codigo, String nombre, String apellido, Integer edad, String dui, String nit, String sexo, String ingreso, Integer membresia) {
         this.codigo = codigo;
         this.nombre = nombre;
@@ -36,7 +36,7 @@ public class Cliente {
         this.membresia = membresia;
     }
     
-    
+// seter a n geter   
     public Integer getEdad() {
         return edad;
     }

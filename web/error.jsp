@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-        <title>Gimnasio</title>
+        <title>Error</title>
         <!-- Bootstrap Core CSS -->
         <link href="css/sb-admin.css" rel="stylesheet">
    
