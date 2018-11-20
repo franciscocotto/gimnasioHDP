@@ -1,7 +1,7 @@
 <%-- 
     Document   : addClientes
     Created on : 12-nov-2018, 23:45:32
-    Author     : Angel
+    Author     : Angel Coto
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!-- Modal Desvincular -->
@@ -41,10 +41,10 @@
                         <label class="col-md-3 control-label">Beneficios:</label>
                         <div class="col-md-8">
                        <div class="checkbox">
-                            <label><input class="c0" type="checkbox" id="select-all" name="beneficio">Seleccionar Todos</label>
+                            <label><input class="c0 check-all" type="checkbox" >Seleccionar Todos</label>
                         </div>                     
                         <div class="checkbox">
-                            <label><input type="checkbox" name="beneficio" value="Baile">Baile</label>
+                            <label><input type="checkbox" class="check" name="beneficio" value="Baile">Baile</label>
                         </div>
                         <div class="checkbox">
                             <label><input type="checkbox" name="beneficio" value="Yoga">Yoga</label>

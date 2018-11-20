@@ -1,7 +1,7 @@
 <%-- 
     Document   : tableClientes
     Created on : 12-nov-2018, 23:56:28
-    Author     : Angel
+    Author     : Angel Coto
 --%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.ResultSet"%>

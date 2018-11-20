@@ -1,7 +1,7 @@
 <%-- 
     Document   : alert
     Created on : 12-nov-2018, 23:46:30
-    Author     : Angel
+    Author     : Angel Coto
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <div class="modal fade" id="confirmDelete" role="dialog" aria-labelledby="confirmDeleteLabel" aria-hidden="true">

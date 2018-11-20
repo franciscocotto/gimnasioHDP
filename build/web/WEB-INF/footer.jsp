@@ -1,7 +1,7 @@
 <%-- 
     Document   : footer
     Created on : 12-nov-2018, 23:56:07
-    Author     : Angel
+    Author     : Angel Coto
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

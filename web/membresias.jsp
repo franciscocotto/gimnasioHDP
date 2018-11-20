@@ -26,12 +26,9 @@
        <jsp:include page="WEB-INF/AddMembresias.jsp" />
         <script src="js/scripts.js"></script>
         <script>    
-//    $(document).ready(function()
-//         {     
+ 
           $('a.edit').on("click",function(){
             var myModal = $('#readmembresia');
-             //capturar datos desde tabla
-           // $(":checkbox").prop("checked","true");
             var currentTR = $(this).closest('tr');
             var nombre = currentTR.find("td.nombre").text();
             var cod = currentTR.find("td.codigo").text();
@@ -39,7 +36,7 @@
             var costo = currentTR.find("td.costo").text().replace("$", "");
             var get=currentTR.find("td.beneficios").text().replace("\n", "");
             var beneficios = get.split(",");
-            $.each(beneficios, function( membresia, beneficio ) {                            
+            $.each(beneficios, function( index, beneficio ) {                            
                  $(":checkbox[value='"+$.trim(beneficio)+"']").prop("checked","true");
             });
            //enviar datos a modal
@@ -72,10 +69,7 @@
                 $('.c8').val("Yoga");
                 select();
             });
-
-
-
-           
+        
           $('a.delete').on('click', function() {
             var myModal = $('#confirmDelete');
              //capturar datos desde tabla
@@ -89,12 +83,13 @@
             });
             
 
-
         $(function() {
             $('#money').maskMoney();
-        })
+        });
+        
+      $('.check-all').checkAll();
 
-//     });         
+         
         </script>
     </body>
 </html>

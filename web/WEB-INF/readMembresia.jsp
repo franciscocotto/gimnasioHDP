@@ -1,10 +1,11 @@
 <%-- 
     Document   : addClientes
     Created on : 12-nov-2018, 23:45:32
-    Author     : Angel
+    Author     : Angel Coto
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!-- Modal Desvincular -->
+
 <div class="modal fade resette" id="readmembresia" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -53,7 +54,7 @@
                         <label class="col-md-3 control-label">Beneficios:</label>
                         <div class="col-md-8">
                         <div class="checkbox">
-                             <label><input class="c0" type="checkbox" id="select-all" name="beneficio">Seleccionar Todos</label>
+                             <label><input class="c0 check-all" type="checkbox">Seleccionar Todos</label>
                         </div>
                         <div class="checkbox">
                             <label><input class="check c1" type="checkbox" name="beneficio" value="Baile">Baile</label>

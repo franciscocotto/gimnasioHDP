@@ -22,9 +22,9 @@
         
         <script src="js/scripts.js"></script>
         <script>
-           
-            $('a.edit').on('click', function() {
-            var myModal = $('#editarusuario');
+          $( "a.edit" ).each(function(index) { 
+                $(this).on("click", function(){
+             var myModal = $('#editarusuario');
              //capturar datos desde tabla
             var currentTR = $(this).closest('tr');
             var cod = currentTR.find("td.codigo").text();
@@ -41,10 +41,10 @@
             $('.addapellido', myModal).val(apellido);
             $('.addedad', myModal).val(edad);
            if(sexo==="Hombre\n"){
-            $('.addsexo', myModal).prop('selectedIndex',0);
+                $('.addsexo', myModal).prop('selectedIndex',0);
             }
             else if(sexo==="Mujer\n"){
-             $('.addsexo', myModal).prop('selectedIndex',1);
+               $('.addsexo', myModal).prop('selectedIndex',1);
             }
             $('.adddui', myModal).val(ndui);
             $('.addnnit', myModal).val(nnit);
@@ -55,6 +55,7 @@
             myModal.modal({ show: true });
               return false;
             });
+          });
 
 
           $('a.delete').on('click', function() {

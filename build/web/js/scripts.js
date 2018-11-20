@@ -14,3 +14,4 @@ document.write('<script type="text/javascript" src="js/moment.js"></script>');
 document.write('<script type="text/javascript" src="js/bootstrap-datetimepicker.js"></script>');
 document.write('<script type="text/javascript" src="js/initTable.js"></script>');
 document.write('<script type="text/javascript" src="js/validaciones.js"></script>');
+document.write('<script type="text/javascript" src="js/jquery.checkall.js"></script>');

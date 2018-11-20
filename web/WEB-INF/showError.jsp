@@ -1,7 +1,7 @@
 <%-- 
     Document   : Clientes
     Created on : 12-nov-2018, 23:41:28
-    Author     : Angel
+    Author     : Angel Coto
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page isErrorPage="true" %>

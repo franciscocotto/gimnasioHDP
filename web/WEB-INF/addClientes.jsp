@@ -1,7 +1,7 @@
 <%-- 
     Document   : addClientes
     Created on : 12-nov-2018, 23:45:32
-    Author     : Angel
+    Author     : Angel Coto
 --%>
 
 
@@ -59,7 +59,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-3 control-label" style="margin-right: 15px !important;"><strong class="colorred">*</strong>Fecha de Nacimiento</label>
+                        <label class="col-md-3 control-label" style="margin-right: 15px !important;"><strong class="colorred">*</strong>Fecha de Ingreso</label>
 
                         <div class="col-md-4 input-group input-append  dateagenowPicker">
                             <input type='text' class="form-control date" placeholder="DD/MMM/YYYY" readonly="readonly" name="fechaingreso" required="required" />
