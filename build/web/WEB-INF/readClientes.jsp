@@ -1,9 +1,3 @@
-<%-- 
-    Document   : addClientes
-    Created on : 12-nov-2018, 23:45:32
-    Author     : Angel Coto
---%>
-
 <%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -68,6 +62,69 @@
                         <label class="col-md-3 control-label"><strong class="colorred">*</strong>NIT:</label>
                         <div class="col-md-8">
                             <input class="form-control nit addnnit" type="text" name="nit" placeholder="Ingresar el NIT del Cliente" required="required" maxlength="17" minlength="17"/>    
+                        </div>
+                    </div>
+                    <script>
+                             function CalculoImc2(monto3, monto4, total1) {
+
+                   montoParse3 = parseFloat(monto3.value);
+                   montoParse4 = parseFloat(monto4.value);
+
+                   if (typeof montoParse3 === 'number' && !isNaN(montoParse3) ) {
+
+                       var ivaCalc2   = montoParse3 * montoParse4;
+                       var totalCalc2 =  (montoParse3 / ivaCalc2)*10000 ;
+
+                    if (isNaN(ivaCalc2)) { 
+                        $('#total1').val('0');
+
+                   }                    
+                    else if (isNaN(totalCalc2)) { 
+                        $('#total1').val('0');
+
+                   } 
+                   
+                    else
+ 
+                        $('#total1').val(totalCalc2.toFixed(1));
+
+                   } 
+                   else if (isNaN(montoParse3)) { 
+                        $('#total1').val('0');
+
+                   }
+                  
+                  else {
+                       total1.value = '';
+                       monto3.value = '';
+                       monto4.value = '';
+                       console.log('Introduce un numero válido');
+                   }
+                 }
+                 function getval(sel)
+                     {
+                      var monto3= document.getElementById('Monto3');
+                      var monto4 = document.getElementById('Monto4');
+                      var total1 = document.getElementById('Total1');
+                        CalculoImc2(monto3, monto4, total1)
+                    }
+                    </script>
+                    <div class="form-group numero">
+                        <label class="col-md-3 control-label"><strong class="colorred">*</strong>Peso (kg):</label>
+                        <div class="col-md-8">
+                            <input class="form-control addpeso" type="text" name="peso" id="Monto3" onchange="getval(this);" placeholder="Ingresar el peso del Cliente" required="required" maxlength="17" minlength="1"/>    
+                        </div>
+                    </div>
+                      <div class="form-group numero">
+                        <label class="col-md-3 control-label"><strong class="colorred">*</strong>Estatura (cm):</label>
+                        <div class="col-md-8">                           
+                            <input class="form-control addestatura" type="text" name="estatura" onchange="getval(this);" id="Monto4"  placeholder="Ingresar la estatura del Cliente" required="required" maxlength="17" minlength="1"/>    
+                        </div>
+                      </div>
+                    <div class="form-group numero">
+                        <label class="col-md-3 control-label"><strong class="colorred">*</strong>IMC:</label>
+                        <div class="col-md-8">
+                           <input class="form-control addimc" type="text" name="imc"  id="total1"  readonly="readonly" required="required"/>               
                         </div>
                     </div>
                     <div class="form-group">

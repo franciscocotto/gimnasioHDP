@@ -1,24 +1,79 @@
-<%-- 
-    Document   : tableClientes
-    Created on : 12-nov-2018, 23:56:28
-    Author     : Angel Coto
---%>
 <%@page import="java.sql.SQLException"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+ <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 <!--preparando conexion a base de datos en jsp-->
 <%conexion.ConexionJDBC con = new conexion.ConexionJDBC();
           Connection  cn = con.conectar();//se conecto a la base de datos
-            String sql="select id_campo, nombre ,apellidos,sexo,edad,dui,nit,fechaingreso,id_membresia,nombremembresia"
+            String sql="select id_campo, nombre ,apellidos,sexo,edad,dui,nit,fechaingreso,peso,estatura,imc,id_membresia,nombremembresia"
                     + " from public.\"Cliente\" A INNER JOIN membresia B ON A.membresia=B.id_membresia ORDER BY id_campo;";     
             Statement st;//preparando envio de consulta select
             
                 try {
                    st = cn.createStatement();
                    ResultSet r=st.executeQuery(sql); //resultset%>
-                   <div>                 
+                   <div>              
+                       
+                       <script>
+                           
+ $(document).ready(function() {
+$( "td.imc" ).each( function(){
+  var value = $(this).text();
+  value = Number(value.replace(/,/, "." )).toFixed(1);
+  $(this).text( value );
+});
+
+
+            
+                  function CalculoImc(monto, monto2, total) {
+
+                   montoParse = parseFloat(monto.value);
+                   montoParse2 = parseFloat(monto2.value);
+
+                   if (typeof montoParse === 'number' && !isNaN(montoParse) ) {
+
+                       var ivaCalc   = montoParse2 * montoParse2;
+                       var totalCalc =  (montoParse / ivaCalc)*10000 ;
+
+                    if (isNaN(ivaCalc)) { 
+                        $('#total').val('0');
+
+                   }                    
+                    else if (isNaN(totalCalc)) { 
+                        $('#total').val('0');
+
+                   } 
+                   
+                    else
+ 
+                        $('#total').val(totalCalc.toFixed(1));
+
+                   } 
+                   else if (isNaN(montoParse)) { 
+                        $('#total').val('0');
+
+                   }
+                  
+                  else {
+                       total.value = '';
+                       monto.value = '';
+                       monto2.value = '';
+                       console.log('Introduce un numero válido');
+                   }
+                 }
+                 function getval(sel)
+                     {
+                      var monto = document.getElementById('Monto');
+                      var monto2 = document.getElementById('Monto2');
+                      var total = document.getElementById('Total');
+                        CalculoImc(monto, monto2, total)
+                    }
+                 
+});
+   
+</script>
 <table id="example" class="table tabler hover link table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
     <thead>
         <tr>
@@ -31,6 +86,9 @@
             <th>NIT</th>
             <th>ID_Cliente</th>
             <th>Fecha Ingreso</th>
+            <th>Peso</th>
+            <th>Estatura</th>
+             <th>IMC</th>
             <th>ID_Membresia</th>
             <th>Membresia</th>
             <th>Ver</th>
@@ -50,6 +108,9 @@
             <td class="nnit"><%out.println(r.getString("nit"));%></td>
             <td class="codigo"><center><%out.println(r.getString("id_campo"));%></center></td>
             <td class="ingreso"><%out.println(r.getString("fechaingreso"));%></td>
+            <td class="peso"><%out.println(r.getString("peso"));%>kg</td>
+            <td class="estatura"><%out.println(r.getString("estatura"));%>cm</td>
+            <td class="imc usd_input" name="dollar_amt"><%out.println((r.getString("imc")));%></td>
             <td class="idmembresia"><center><%out.println(r.getString("id_membresia"));%></center></td>
             <td class="membresia"><center><%out.println(r.getString("nombremembresia"));%></center></td>
             <td>

@@ -46,6 +46,9 @@ public class formEditClientes extends HttpServlet {
             String nit = request.getParameter("nit");
             String edad = request.getParameter("edad");
             String sexo = request.getParameter("sexo");
+            String peso = request.getParameter("peso");
+            String estatura = request.getParameter("estatura");
+            String imc = request.getParameter("imc");
             String ingreso = request.getParameter("fechaingreso");           
             String membresia = request.getParameter("membresia");
             
@@ -59,7 +62,11 @@ public class formEditClientes extends HttpServlet {
             cliente.setDui(dui);
             cliente.setNit(nit);
             cliente.setIngreso(ingreso);
-            cliente.setMembresia(Integer.parseInt(membresia));//cambio de tipo de variable
+            cliente.setMembresia(Integer.parseInt(membresia));
+            cliente.setPeso(Integer.parseInt(peso));
+            cliente.setEstatura(Integer.parseInt(estatura));
+            cliente.setImc(Double.parseDouble(imc));
+           //cambio de tipo de variable
           //almacenando datos en las variables con el constructor   
             modelo.addClientes editaCliente = new modelo.addClientes();
             editaCliente.edita(cliente);

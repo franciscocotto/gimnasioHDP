@@ -1,6 +1,6 @@
 body
 {
-    background: url('../images/haciendaelsalv.jpg') fixed;
+    background: url('../images/section-bg-4.jpg') fixed;
     background-size: cover;
     padding: 0;
      font-family: sans-serif;
@@ -236,15 +236,10 @@ margin-left: -50%; /* Negative half of width. */
 }
 
 .logo2{
-   position:fixed; background:#fff; text-align:center;
+   position:fixed; background:#28a1f6; text-align:center;
  height:60px; width: 100%; 
 }
 
-.logo2 img {
-    margin-top: 0.5%;
-    background-size: cover;
-    background-position: center;
-}
 
 @media only screen and (min-width: 360px) and (max-width : 640px) {
 .pass-reset

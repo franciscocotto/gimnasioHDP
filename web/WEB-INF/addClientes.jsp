@@ -1,10 +1,3 @@
-<%-- 
-    Document   : addClientes
-    Created on : 12-nov-2018, 23:45:32
-    Author     : Angel Coto
---%>
-
-
 <%@page import="java.sql.ResultSet"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!-- Modal Desvincular -->
@@ -56,6 +49,26 @@
                         <label class="col-md-3 control-label"><strong class="colorred">*</strong>NIT:</label>
                         <div class="col-md-8">
                             <input class="form-control nit" type="text" name="nit" placeholder="Ingresar el NIT del Cliente" required="required" maxlength="17" minlength="17"/>    
+                        </div>
+                    </div>
+                    
+      
+                    <div class="form-group numero">
+                        <label class="col-md-3 control-label"><strong class="colorred">*</strong>Peso (kg):</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="text" name="peso" id="Monto" onchange="getval(this);" placeholder="Ingresar el peso del Cliente" required="required" maxlength="17" minlength="1"/>    
+                        </div>
+                    </div>
+                      <div class="form-group numero">
+                        <label class="col-md-3 control-label"><strong class="colorred">*</strong>Estatura (cm):</label>
+                        <div class="col-md-8">                           
+                            <input class="form-control" type="text" name="estatura" onchange="getval(this);" id="Monto2"  placeholder="Ingresar la estatura del Cliente" required="required" maxlength="17" minlength="1"/>    
+                        </div>
+                      </div>
+                    <div class="form-group numero">
+                        <label class="col-md-3 control-label"><strong class="colorred">*</strong>IMC:</label>
+                        <div class="col-md-8">
+                           <input class="form-control" type="text" name="imc"  id="total"  readonly="readonly" required="required"/>               
                         </div>
                     </div>
                     <div class="form-group">

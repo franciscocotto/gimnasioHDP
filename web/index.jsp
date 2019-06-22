@@ -37,6 +37,9 @@
             var ndui = currentTR.find("td.ndui").text();
             var nnit = currentTR.find("td.nnit").text();
             var ingreso = currentTR.find("td.ingreso").text();
+            var peso = currentTR.find("td.peso").text().replace('kg', '');
+            var estatura = currentTR.find("td.estatura").text().replace('cm', '');
+            var imc = currentTR.find("td.imc").text();
             var membresia = currentTR.find("td.idmembresia").text().replace(/\n/g, '');
             $('.addcodigo', myModal).val(cod);
             $('.addnombre', myModal).val(nombre);
@@ -51,6 +54,9 @@
             $('.adddui', myModal).val(ndui);
             $('.addnnit', myModal).val(nnit);
             $('.addingreso', myModal).val(ingreso);
+            $('.addpeso', myModal).val(peso);
+            $('.addestatura', myModal).val(estatura);
+            $('.addimc', myModal).val(imc);
             $('.addmembresia', myModal).val(membresia);
 
             //mostrar modal
